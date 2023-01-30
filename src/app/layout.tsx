@@ -1,18 +1,19 @@
-import './globals.css'
+import GlobalStyle from '@/styles/GlobalStyle'
+import { NextPage } from 'next/types'
+import { notoSansKrFont } from './fonts'
 
-export default function RootLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode
-}) {
+}
+
+const RootLayout: NextPage<Props> = (Props) => {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
+    <html>
+      <GlobalStyle />
+      <head className={`${notoSansKrFont.className}`} />
+      <body className={`${notoSansKrFont.className}`}>{Props.children}</body>
     </html>
   )
 }
+
+export default RootLayout
