@@ -2,16 +2,16 @@ import GlobalStyle from '@/styles/GlobalStyle'
 import { NextPage } from 'next/types'
 import { notoSansKrFont } from './fonts'
 
-interface Props {
+interface PropTpyes {
   children: React.ReactNode
 }
 
-const RootLayout: NextPage<Props> = (Props) => {
+const RootLayout: NextPage<PropTpyes> = ({ children }) => {
   return (
     <html>
       <GlobalStyle />
       <head className={`${notoSansKrFont.className}`} />
-      <body className={`${notoSansKrFont.className}`}>{Props.children}</body>
+      <body className={`${notoSansKrFont.className}`}>{children}</body>
     </html>
   )
 }

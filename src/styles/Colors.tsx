@@ -1,6 +1,6 @@
 'use client'
 
-export const COLORS = {
+export const COLOR = {
   brand: '#FF4713',
   background: '#F7F6F3',
   hover: '#DEDDDA',
