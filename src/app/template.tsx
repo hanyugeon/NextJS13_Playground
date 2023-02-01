@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import { StyledTemplate } from '@/components/Template'
-import { NextPage } from 'next'
+import { NextPage } from 'next/types'
 
 interface PropTypes {
   children: React.ReactNode

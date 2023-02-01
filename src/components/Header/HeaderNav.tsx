@@ -1,20 +1,20 @@
 'use client'
 
 import { icGithub } from '@/assets/icons'
-import Image from 'next/image'
 import { NextPage } from 'next/types'
-import { StyledHeaderNav, StyledHeaderNavMenuItem, StyledHeaderNavLink, StyledHeaderNavMenu } from './styled'
+import HeaderNavItem from './HeaderNavItem'
+import { StyledHeaderNav, StyledHeaderNavLink, StyledHeaderNavMenu } from './styled'
 
 const HeaderNav: NextPage = () => {
   return (
     <StyledHeaderNav>
       <StyledHeaderNavMenu>
-        <StyledHeaderNavMenuItem>커피 목록</StyledHeaderNavMenuItem>
-        <StyledHeaderNavMenuItem>기술 스택</StyledHeaderNavMenuItem>
-        <StyledHeaderNavMenuItem>만든 계기</StyledHeaderNavMenuItem>
+        <HeaderNavItem href="/" variant="menu" title="커피 목록" />
+        <HeaderNavItem href="/tech" variant="menu" title="기술 스택" />
+        <HeaderNavItem href="/about" variant="menu" title="만든 계기" />
       </StyledHeaderNavMenu>
       <StyledHeaderNavLink>
-        <Image src={icGithub} alt="" />
+        <HeaderNavItem href="https://github.com/hanyugeon" variant="link" icon={icGithub} />
       </StyledHeaderNavLink>
     </StyledHeaderNav>
   )

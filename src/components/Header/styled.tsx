@@ -3,7 +3,7 @@
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledHeaderWrapper = styled.div`
+const StyledHeaderWrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
