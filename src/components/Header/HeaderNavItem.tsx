@@ -23,7 +23,7 @@ const HeaderNavItem: NextPage<PropTypes> = (props) => {
 
   if (props.variant === 'link') {
     return (
-      <Link href={props.href} target="_blank" rel="noopener">
+      <Link href={props.href} aria-label={props.title} target="_blank" rel="noopener">
         <Image src={props.icon} alt="" />
       </Link>
     )

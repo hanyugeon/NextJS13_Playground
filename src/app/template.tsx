@@ -8,10 +8,12 @@ interface PropTypes {
 
 const Template: NextPage<PropTypes> = ({ children }) => {
   return (
-    <StyledTemplate>
+    <>
       <Header />
-      {children}
-    </StyledTemplate>
+      <StyledTemplate>
+        {children}
+      </StyledTemplate>
+    </>
   )
 }
 
