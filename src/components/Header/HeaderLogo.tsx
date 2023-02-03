@@ -8,7 +8,7 @@ import { StyledHeaderLogo } from './styled'
 const HeaderLogo: NextPage = () => {
   return (
     <StyledHeaderLogo>
-      <Image src={icLogo} alt="" />
+      <Image src={icLogo} alt="" priority={true} />
     </StyledHeaderLogo>
   )
 }

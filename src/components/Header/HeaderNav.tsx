@@ -5,16 +5,41 @@ import { NextPage } from 'next/types'
 import HeaderNavItem from './HeaderNavItem'
 import { StyledHeaderNav, StyledHeaderNavLink, StyledHeaderNavMenu } from './styled'
 
+type MENU_TYPES = { href: string, variant: string, title: string }[]
+type LINK_TYPES = { href: string, variant: string, title: string, icon: string}[]
+
+const NAV_MENU_CONTENTS: MENU_TYPES = [
+  {href: "/", variant: "menu", title: "커피 목록"},
+  {href: "/tech", variant: "menu", title: "기술 스택"},
+  {href: "/about", variant: "menu", title: "만든 계기"},
+]
+const NAV_LINK_CONTENTS: LINK_TYPES = [
+  {href: "https:/github.com/hanyugeon", variant: "link", title: "github", icon: icGithub}
+]
+
 const HeaderNav: NextPage = () => {
   return (
     <StyledHeaderNav>
       <StyledHeaderNavMenu>
-        <HeaderNavItem href="/" variant="menu" title="커피 목록" />
-        <HeaderNavItem href="/tech" variant="menu" title="기술 스택" />
-        <HeaderNavItem href="/about" variant="menu" title="만든 계기" />
+        {NAV_MENU_CONTENTS.map((content, index) =>
+          <HeaderNavItem
+            key={index}
+            href={content.href}
+            variant={content.variant}
+            title={content.title}
+          />
+        )}
       </StyledHeaderNavMenu>
       <StyledHeaderNavLink>
-        <HeaderNavItem href="https://github.com/hanyugeon" variant="link" icon={icGithub} />
+        {NAV_LINK_CONTENTS.map((content, index) => 
+          <HeaderNavItem
+            key={index}
+            href={content.href}
+            variant={content.variant}
+            title={content.title}
+            icon={content.icon}
+          />
+        )}
       </StyledHeaderNavLink>
     </StyledHeaderNav>
   )

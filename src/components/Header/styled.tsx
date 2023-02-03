@@ -15,7 +15,7 @@ const StyledHeaderWrapper = styled.nav`
   background-color: ${COLOR.white};
 `
 
-const StyledHeaderContainer = styled.div`
+const StyledHeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@ const StyledHeaderContainer = styled.div`
   max-width: 120rem;
   height: 100%;
 
-  > div {
+  > nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,15 +36,15 @@ const StyledHeaderContainer = styled.div`
   }
 `
 
-const StyledHeaderLogo = styled.div`
+const StyledHeaderLogo = styled.nav`
   width: 24.4rem;
 `
 
-const StyledHeaderNav = styled.div`
+const StyledHeaderNav = styled.nav`
   width: 100%;
 `
 
-const StyledHeaderNavMenu = styled.div`
+const StyledHeaderNavMenu = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -54,10 +54,10 @@ const StyledHeaderNavMenu = styled.div`
 
 const StyledHeaderNavMenuItem = styled.span`
   font-size: 1.8rem;
-  color: ${COLOR.brand};
+  color: ${COLOR.brand1};
 `
 
-const StyledHeaderNavLink = styled.div`
+const StyledHeaderNavLink = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
