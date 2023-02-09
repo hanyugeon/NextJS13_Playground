@@ -14,8 +14,8 @@ const CoffeeListHeader: NextPage = () => {
   return (
       <StyledCoffeeListHeaderContainer>
         {TABLE_CONTENTS.map(
-          (content: string, index: number) => 
-          <StyledCoffeeListHeaderTable key={index}>
+          (content: string) => 
+          <StyledCoffeeListHeaderTable key={content}>
             {content}
           </StyledCoffeeListHeaderTable>
         )}
