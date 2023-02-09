@@ -10,7 +10,7 @@ const StyledCoffeeItemContainer = styled.article`
   text-align: center;
   background-color: ${COLOR.white};
   
-  :nth-child(even) {
+  :nth-of-type(even) {
     background-color: ${COLOR.brand3}
   }
 
