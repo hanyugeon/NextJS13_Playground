@@ -1,7 +1,7 @@
 'use client'
 
-import styled from "@emotion/styled";
-import { COLOR } from '@/styles/Colors';
+import styled from '@emotion/styled'
+import { COLOR } from '@/styles/Colors'
 
 const StyledCoffeeItemContainer = styled.article`
   display: flex;
@@ -9,13 +9,13 @@ const StyledCoffeeItemContainer = styled.article`
   height: 8rem;
   text-align: center;
   background-color: ${COLOR.white};
-  
-  :nth-child(even) {
-    background-color: ${COLOR.brand3}
+
+  :nth-of-type(even) {
+    background-color: ${COLOR.brand3};
   }
 
   :hover {
-    background-color: ${COLOR.hover}
+    background-color: ${COLOR.hover};
   }
 
   > div {
@@ -25,14 +25,14 @@ const StyledCoffeeItemContainer = styled.article`
   }
 `
 
-const StyledCoffeeItemHottest = styled.div<{isHottest: boolean}>`
+const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
   width: 10%;
   height: 100%;
 
   > img {
     width: 3rem;
     height: 3rem;
-    visibility: ${(props) => props.isHottest ? 'visible' : 'hidden'};
+    visibility: ${(props) => (props.isHottest ? 'visible' : 'hidden')};
   }
 `
 
@@ -48,22 +48,23 @@ const StyledCoffeeItemCheckBox = styled.div`
   height: 100%;
 `
 
-const StyledCoffeeItemCheckBoxElement = styled.div<{isChecked: boolean}>`
+const StyledCoffeeItemCheckBoxElement = styled.div<{ isChecked: boolean }>`
   width: 2rem;
   height: 2rem;
-  background-color: ${(props) => (props.isChecked ? `${COLOR.negative1}` : `${COLOR.negative3}`)};
+  background-color: ${(props) =>
+    props.isChecked ? `${COLOR.negative1}` : `${COLOR.negative3}`};
   border-radius: 0.4rem;
   transition: all 200ms;
 
   :hover {
-    background-color: ${COLOR.negative2}
-  };
+    background-color: ${COLOR.negative2};
+  }
 `
 
 export {
-  StyledCoffeeItemContainer, 
+  StyledCoffeeItemContainer,
   StyledCoffeeItemHottest,
   StyledCoffeeItemContent,
   StyledCoffeeItemCheckBoxElement,
-  StyledCoffeeItemCheckBox
+  StyledCoffeeItemCheckBox,
 }
