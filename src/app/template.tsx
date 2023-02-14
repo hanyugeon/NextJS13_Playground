@@ -10,9 +10,7 @@ const Template: NextPage<PropTypes> = ({ children }) => {
   return (
     <>
       <Header />
-      <StyledTemplate>
-        {children}
-      </StyledTemplate>
+      <StyledTemplate>{children}</StyledTemplate>
     </>
   )
 }

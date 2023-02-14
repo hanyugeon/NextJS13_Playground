@@ -1,4 +1,6 @@
-export default function Head() {
+import { NextPage } from 'next/types'
+
+const Head: NextPage = () => {
   return (
     <>
       <title>NextJs13 PlayGround</title>
@@ -7,3 +9,5 @@ export default function Head() {
     </>
   )
 }
+
+export default Head

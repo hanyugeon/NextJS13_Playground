@@ -1,9 +1,9 @@
 'use client'
 
-import { icHottest } from '@/assets/icons';
-import Image from 'next/image';
-import { NextPage } from 'next/types';
-import { StyledCoffeeItemHottest } from './styled';
+import { icHottest } from '@/assets/icons'
+import Image from 'next/image'
+import { NextPage } from 'next/types'
+import { StyledCoffeeItemHottest } from './styled'
 
 interface PropTypes {
   isHottest: boolean

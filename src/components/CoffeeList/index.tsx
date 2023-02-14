@@ -13,9 +13,7 @@ const CoffeeList: NextPage<PropTypes> = ({ children }) => {
   return (
     <StyledCoffeeListContainer>
       <CoffeeListHeader />
-      <CoffeeListWrapper>
-        {children}
-      </CoffeeListWrapper>
+      <CoffeeListWrapper>{children}</CoffeeListWrapper>
     </StyledCoffeeListContainer>
   )
 }

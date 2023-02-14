@@ -1,10 +1,10 @@
 'use client'
 
-import { NextPage } from 'next/types';
-import CoffeeItemCheckBox from './CoffeeItemCheckBox';
-import CoffeeItemContainer from './CoffeeItemContainer';
-import CoffeeItemContent from './CoffeeItemContent';
-import CoffeeItemHottest from './CoffeeItemHottest';
+import { NextPage } from 'next/types'
+import CoffeeItemCheckBox from './CoffeeItemCheckBox'
+import CoffeeItemContainer from './CoffeeItemContainer'
+import CoffeeItemContent from './CoffeeItemContent'
+import CoffeeItemHottest from './CoffeeItemHottest'
 
 interface CoffeeTypes {
   title: string
@@ -15,9 +15,9 @@ const CoffeeItem: NextPage<CoffeeTypes> = (props) => {
   return (
     <CoffeeItemContainer>
       <CoffeeItemHottest isHottest={props.isHottest} />
-      <CoffeeItemContent title={props.title}/>
-      <CoffeeItemCheckBox isChecked={true}/>
-      <CoffeeItemCheckBox isChecked={false}/>
+      <CoffeeItemContent title={props.title} />
+      <CoffeeItemCheckBox isChecked={true} />
+      <CoffeeItemCheckBox isChecked={false} />
     </CoffeeItemContainer>
   )
 }

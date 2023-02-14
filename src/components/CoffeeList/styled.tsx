@@ -1,7 +1,7 @@
 'use client'
 
-import styled from "@emotion/styled";
-import { COLOR } from '@/styles/Colors';
+import styled from '@emotion/styled'
+import { COLOR } from '@/styles/Colors'
 
 const StyledCoffeeListContainer = styled.section`
   width: 100%;
@@ -20,10 +20,18 @@ const StyledCoffeeListHeaderContainer = styled.header`
   background-color: ${COLOR.brand1};
   color: ${COLOR.white};
 
-  span:nth-of-type(1) { width: 10%; }
-  span:nth-of-type(2) { width: 60%; }
-  span:nth-of-type(3) { width: 15%; } 
-  span:nth-of-type(4) { width: 15%; }
+  span:nth-of-type(1) {
+    width: 10%;
+  }
+  span:nth-of-type(2) {
+    width: 60%;
+  }
+  span:nth-of-type(3) {
+    width: 15%;
+  }
+  span:nth-of-type(4) {
+    width: 15%;
+  }
 `
 
 const StyledCoffeeListHeaderTable = styled.span`

@@ -1,7 +1,10 @@
 'use client'
 
-import { NextPage } from 'next/types';
-import { StyledCoffeeItemCheckBox, StyledCoffeeItemCheckBoxElement } from './styled';
+import { NextPage } from 'next/types'
+import {
+  StyledCoffeeItemCheckBox,
+  StyledCoffeeItemCheckBoxElement,
+} from './styled'
 
 interface PropTypes {
   isChecked: boolean
@@ -10,7 +13,7 @@ interface PropTypes {
 const CoffeeItemCheckBox: NextPage<PropTypes> = (props) => {
   return (
     <StyledCoffeeItemCheckBox>
-      <StyledCoffeeItemCheckBoxElement isChecked={props.isChecked}/>
+      <StyledCoffeeItemCheckBoxElement isChecked={props.isChecked} />
     </StyledCoffeeItemCheckBox>
   )
 }
