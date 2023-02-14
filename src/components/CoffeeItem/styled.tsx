@@ -41,7 +41,7 @@ const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
   height: 100%;
   font-size: 2.2rem;
   text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
-  color: ${COLOR.black};
+  color: ${(props) => (props.isSoldOut ? COLOR.gray : COLOR.black)};
 `
 
 const StyledCoffeeItemCheckBox = styled.div`
