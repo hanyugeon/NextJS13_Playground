@@ -36,11 +36,12 @@ const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
   }
 `
 
-const StyledCoffeeItemContent = styled.div`
+const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
   width: 60%;
   height: 100%;
   font-size: 2.2rem;
-  color: ${COLOR.black};
+  text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
+  color: ${(props) => (props.isSoldOut ? COLOR.gray : COLOR.black)};
 `
 
 const StyledCoffeeItemCheckBox = styled.div`
@@ -48,7 +49,10 @@ const StyledCoffeeItemCheckBox = styled.div`
   height: 100%;
 `
 
-const StyledCoffeeItemCheckBoxElement = styled.div<{ isChecked: boolean }>`
+const StyledCoffeeItemCheckBoxElement = styled.div<{
+  isChecked: boolean
+  onClick: () => void
+}>`
   width: 2rem;
   height: 2rem;
   background-color: ${(props) =>

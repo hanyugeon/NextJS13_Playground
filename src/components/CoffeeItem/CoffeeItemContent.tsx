@@ -5,10 +5,15 @@ import { StyledCoffeeItemContent } from './styled'
 
 interface PropTypes {
   title: string
+  isSoldOut: boolean
 }
 
 const CoffeeItemContent: NextPage<PropTypes> = (props) => {
-  return <StyledCoffeeItemContent>{props.title}</StyledCoffeeItemContent>
+  return (
+    <StyledCoffeeItemContent isSoldOut={props.isSoldOut}>
+      {props.title}
+    </StyledCoffeeItemContent>
+  )
 }
 
 export default CoffeeItemContent

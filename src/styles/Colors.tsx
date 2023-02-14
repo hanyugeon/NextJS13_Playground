@@ -13,5 +13,6 @@ export const COLOR = {
   hover: '#DEDDDA',
 
   black: '#000000',
+  gray: '#808080',
   white: '#FFFFFF',
 }

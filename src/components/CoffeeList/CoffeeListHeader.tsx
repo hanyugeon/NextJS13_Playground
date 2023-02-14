@@ -6,7 +6,7 @@ import {
   StyledCoffeeListHeaderTable,
 } from './styled'
 
-const TABLE_CONTENTS: string[] = ['인기', '메뉴', '품절 토글', '인기 토글']
+const TABLE_CONTENTS: string[] = ['인기', '메뉴', '인기 토글', '품절 토글']
 
 const CoffeeListHeader: NextPage = () => {
   return (

@@ -8,12 +8,16 @@ import {
 
 interface PropTypes {
   isChecked: boolean
+  onClick: () => void
 }
 
 const CoffeeItemCheckBox: NextPage<PropTypes> = (props) => {
   return (
     <StyledCoffeeItemCheckBox>
-      <StyledCoffeeItemCheckBoxElement isChecked={props.isChecked} />
+      <StyledCoffeeItemCheckBoxElement
+        isChecked={props.isChecked}
+        onClick={props.onClick}
+      />
     </StyledCoffeeItemCheckBox>
   )
 }
