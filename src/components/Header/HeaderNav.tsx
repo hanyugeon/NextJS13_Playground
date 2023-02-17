@@ -2,8 +2,10 @@
 
 import { icGithub } from '@/assets/icons'
 import { NextPage } from 'next/types'
+import HeaderHamburger from './HeaderHamburger'
 import HeaderNavItem from './HeaderNavItem'
 import {
+  StyledHeaderHamburger,
   StyledHeaderNav,
   StyledHeaderNavLink,
   StyledHeaderNavMenu,
@@ -55,6 +57,7 @@ const HeaderNav: NextPage = () => {
           />
         ))}
       </StyledHeaderNavLink>
+      <HeaderHamburger />
     </StyledHeaderNav>
   )
 }
