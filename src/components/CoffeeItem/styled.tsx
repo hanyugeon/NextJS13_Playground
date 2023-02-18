@@ -1,7 +1,8 @@
 'use client'
 
-import styled from '@emotion/styled'
+import BREAKPOINTS from '@/styles/BreakPoints'
 import { COLOR } from '@/styles/Colors'
+import styled from '@emotion/styled'
 
 const StyledCoffeeItemContainer = styled.article`
   display: flex;
@@ -23,10 +24,22 @@ const StyledCoffeeItemContainer = styled.article`
     justify-content: center;
     align-items: center;
   }
+
+  div:nth-of-type(1) {
+    width: 16%;
+  }
+  div:nth-of-type(2) {
+    width: 48%;
+  }
+  div:nth-of-type(3) {
+    width: 18%;
+  }
+  div:nth-of-type(4) {
+    width: 18%;
+  }
 `
 
 const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
-  width: 10%;
   height: 100%;
 
   > img {
@@ -37,19 +50,21 @@ const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
 `
 
 const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
-  width: 60%;
   height: 100%;
   font-size: 2.2rem;
   text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
   color: ${(props) => (props.isSoldOut ? COLOR.gray : COLOR.black)};
+
+  @media (max-width: ${BREAKPOINTS.mobile}px) {
+    font-size: 1.8rem;
+  }
 `
 
 const StyledCoffeeItemCheckBox = styled.div`
-  width: 15%;
   height: 100%;
 `
 
-const StyledCoffeeItemCheckBoxElement = styled.div<{
+const StyledCoffeeItemCheckBoxElement = styled.button<{
   isChecked: boolean
   onClick: () => void
 }>`
