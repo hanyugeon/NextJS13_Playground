@@ -15,6 +15,7 @@ const CoffeeItemCheckBox: NextPage<PropTypes> = (props) => {
   return (
     <StyledCoffeeItemCheckBox>
       <StyledCoffeeItemCheckBoxElement
+        aria-label={'MenuOptionCheckBox'}
         isChecked={props.isChecked}
         onClick={props.onClick}
       />
