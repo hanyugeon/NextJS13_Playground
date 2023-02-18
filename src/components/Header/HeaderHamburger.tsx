@@ -7,7 +7,7 @@ import { StyledHeaderHamburger } from './styled'
 
 const HeaderHamburger: NextPage = () => {
   return (
-    <StyledHeaderHamburger>
+    <StyledHeaderHamburger aria-label={'NavigationToggle'}>
       <Image src={icHamburger} alt="" />
     </StyledHeaderHamburger>
   )
