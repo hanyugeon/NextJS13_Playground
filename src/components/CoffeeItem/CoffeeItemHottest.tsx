@@ -1,15 +1,14 @@
 import { icHottest } from '@/assets/icons'
 import Image from 'next/image'
-import { NextPage } from 'next/types'
 import { StyledCoffeeItemHottest } from './styled'
 
-interface PropTypes {
+interface CoffeeItemTypes {
   isHottest: boolean
 }
 
-const CoffeeItemHottest: NextPage<PropTypes> = (props) => {
+const CoffeeItemHottest = ({ isHottest }: CoffeeItemTypes) => {
   return (
-    <StyledCoffeeItemHottest isHottest={props.isHottest}>
+    <StyledCoffeeItemHottest isHottest={isHottest}>
       <Image src={icHottest} alt="" />
     </StyledCoffeeItemHottest>
   )

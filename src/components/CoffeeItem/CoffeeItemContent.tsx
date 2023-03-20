@@ -1,15 +1,14 @@
-import { NextPage } from 'next/types'
 import { StyledCoffeeItemContent } from './styled'
 
-interface PropTypes {
-  title: string
+interface CoffeeItemTypes {
+  coffeeTitle: string
   isSoldOut: boolean
 }
 
-const CoffeeItemContent: NextPage<PropTypes> = (props) => {
+const CoffeeItemContent = ({ coffeeTitle, isSoldOut }: CoffeeItemTypes) => {
   return (
-    <StyledCoffeeItemContent isSoldOut={props.isSoldOut}>
-      {props.title}
+    <StyledCoffeeItemContent isSoldOut={isSoldOut}>
+      {coffeeTitle}
     </StyledCoffeeItemContent>
   )
 }

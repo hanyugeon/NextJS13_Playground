@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <CoffeeList>
       {DUMMY_DATA.map((data) => (
-        <CoffeeItem key={data.title} title={data.title} />
+        <CoffeeItem key={data.title} coffeeTitle={data.title} />
       ))}
     </CoffeeList>
   )

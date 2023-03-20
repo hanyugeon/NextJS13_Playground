@@ -1,11 +1,10 @@
-import { NextPage } from 'next/types'
 import { StyledCoffeeItemContainer } from './styled'
 
-interface PropTypes {
+type ChildrenType = {
   children: React.ReactNode
 }
 
-const CoffeeItemContainer: NextPage<PropTypes> = ({ children }) => {
+const CoffeeItemContainer = ({ children }: ChildrenType) => {
   return <StyledCoffeeItemContainer>{children}</StyledCoffeeItemContainer>
 }
 
