@@ -1,11 +1,10 @@
-import { NextPage } from 'next/types'
 import { StyledCoffeeListWrapper } from './styled'
 
-interface PropTypes {
+type ChildrenType = {
   children: React.ReactNode
 }
 
-const CoffeeListWrapper: NextPage<PropTypes> = ({ children }) => {
+const CoffeeListWrapper = ({ children }: ChildrenType) => {
   return <StyledCoffeeListWrapper>{children}</StyledCoffeeListWrapper>
 }
 
