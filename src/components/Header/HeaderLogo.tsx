@@ -1,5 +1,3 @@
-'use client'
-
 import { icLogo } from '@/assets/icons'
 import Image from 'next/image'
 import { NextPage } from 'next/types'

@@ -1,5 +1,3 @@
-'use client'
-
 import { NextPage } from 'next/types'
 import CoffeeListWrapper from './CoffeeListWrapper'
 import CoffeeListHeader from './CoffeeListHeader'

@@ -1,5 +1,3 @@
-'use client'
-
 import { icGithub } from '@/assets/icons'
 import { NextPage } from 'next/types'
 import HeaderHamburger from './HeaderHamburger'
