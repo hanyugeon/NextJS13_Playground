@@ -1,33 +1,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { NextPage } from 'next/types'
 import { StyledHeaderNavMenuItem } from './styled'
 
-interface PropTypes {
+interface HeaderNavItemTypes {
   href: string
   variant: string
   title: string
   icon: string
 }
 
-const HeaderNavItem: NextPage<PropTypes> = (props) => {
-  if (props.variant === 'menu') {
+const HeaderNavItem = ({ href, variant, title, icon }: HeaderNavItemTypes) => {
+  if (variant === 'menu') {
     return (
-      <Link href={props.href}>
-        <StyledHeaderNavMenuItem>{props.title}</StyledHeaderNavMenuItem>
+      <Link href={href}>
+        <StyledHeaderNavMenuItem>{title}</StyledHeaderNavMenuItem>
       </Link>
     )
   }
 
-  if (props.variant === 'link') {
+  if (variant === 'link') {
     return (
-      <Link
-        href={props.href}
-        aria-label={props.title}
-        target="_blank"
-        rel="noopener"
-      >
-        <Image src={props.icon} alt="" />
+      <Link href={href} aria-label={title} target="_blank" rel="noopener">
+        <Image src={icon} alt="" />
       </Link>
     )
   }
