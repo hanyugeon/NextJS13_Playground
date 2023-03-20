@@ -1,9 +1,8 @@
-import { NextPage } from 'next/types'
 import HeaderContainer from './HeaderContainer'
 import HeaderLogo from './HeaderLogo'
 import HeaderNav from './HeaderNav'
 
-const Header: NextPage = () => {
+const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLogo />

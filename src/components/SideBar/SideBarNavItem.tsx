@@ -3,31 +3,36 @@ import Link from 'next/link'
 import { NextPage } from 'next/types'
 import { StyledSideBarNavMenuItem } from './styled'
 
-interface PropTypes {
+interface SideBarNavItemTypes {
   href: string
   variant: string
   title: string
   icon: string
 }
 
-const SideBarNavItem: NextPage<PropTypes> = (props) => {
-  if (props.variant === 'menu') {
+/**
+ * @todo
+ * 여기도 HeaderNavItem과 마찬가지.
+ */
+
+const SideBarNavItem = ({
+  href,
+  variant,
+  title,
+  icon,
+}: SideBarNavItemTypes) => {
+  if (variant === 'menu') {
     return (
-      <Link href={props.href}>
-        <StyledSideBarNavMenuItem>{props.title}</StyledSideBarNavMenuItem>
+      <Link href={href}>
+        <StyledSideBarNavMenuItem>{title}</StyledSideBarNavMenuItem>
       </Link>
     )
   }
 
-  if (props.variant === 'link') {
+  if (variant === 'link') {
     return (
-      <Link
-        href={props.href}
-        aria-label={props.title}
-        target="_blank"
-        rel="noopener"
-      >
-        <Image src={props.icon} alt="" />
+      <Link href={href} aria-label={title} target="_blank" rel="noopener">
+        <Image src={icon} alt="" />
       </Link>
     )
   }

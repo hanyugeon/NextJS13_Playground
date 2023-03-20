@@ -1,6 +1,4 @@
-type COFFEE_TYPES = { title: string }[]
-
-const DUMMY_DATA: COFFEE_TYPES = [
+const DUMMY_DATA = [
   { title: '에스프레소' },
   { title: '아메리카노' },
   { title: '카페라떼' },

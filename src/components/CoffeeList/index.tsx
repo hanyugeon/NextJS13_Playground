@@ -1,13 +1,12 @@
-import { NextPage } from 'next/types'
-import CoffeeListWrapper from './CoffeeListWrapper'
 import CoffeeListHeader from './CoffeeListHeader'
+import CoffeeListWrapper from './CoffeeListWrapper'
 import { StyledCoffeeListContainer } from './styled'
 
-interface PropTypes {
+type ChildrenType = {
   children: React.ReactNode
 }
 
-const CoffeeList: NextPage<PropTypes> = ({ children }) => {
+const CoffeeList = ({ children }: ChildrenType) => {
   return (
     <StyledCoffeeListContainer>
       <CoffeeListHeader />

@@ -1,15 +1,14 @@
-import { notoSansKrFont } from '@/app/fonts'
 import Header from '@/components/Header'
 import SideBar from '@/components/SideBar'
 import { StyledTemplate } from '@/components/Template'
+import { notoSansKrFont } from '@/app/fonts'
 import GlobalStyle from '@/styles/GlobalStyle'
-import { NextPage } from 'next/types'
 
-interface PropTpyes {
+type ChildrenType = {
   children: React.ReactNode
 }
 
-const RootLayout: NextPage<PropTpyes> = ({ children }) => {
+const RootLayout = ({ children }: ChildrenType) => {
   return (
     <html lang="ko-KR" className={`${notoSansKrFont.className}`}>
       <GlobalStyle />

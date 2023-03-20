@@ -1,9 +1,8 @@
 import { icLogo } from '@/assets/icons'
 import Image from 'next/image'
-import { NextPage } from 'next/types'
 import { StyledHeaderLogo } from './styled'
 
-const HeaderLogo: NextPage = () => {
+const HeaderLogo = () => {
   return (
     <StyledHeaderLogo>
       <Image src={icLogo} alt="" priority={true} />

@@ -1,21 +1,20 @@
-import { NextPage } from 'next/types'
 import {
   StyledCoffeeItemCheckBox,
   StyledCoffeeItemCheckBoxElement,
 } from './styled'
 
-interface PropTypes {
+interface CoffeeItemToggleTypes {
   isChecked: boolean
   onClick: () => void
 }
 
-const CoffeeItemCheckBox: NextPage<PropTypes> = (props) => {
+const CoffeeItemCheckBox = ({ isChecked, onClick }: CoffeeItemToggleTypes) => {
   return (
     <StyledCoffeeItemCheckBox>
       <StyledCoffeeItemCheckBoxElement
         aria-label={'MenuOptionCheckBox'}
-        isChecked={props.isChecked}
-        onClick={props.onClick}
+        isChecked={isChecked}
+        onClick={onClick}
       />
     </StyledCoffeeItemCheckBox>
   )

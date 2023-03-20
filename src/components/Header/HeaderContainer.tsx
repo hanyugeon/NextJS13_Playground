@@ -1,11 +1,10 @@
-import { NextPage } from 'next/types'
 import { StyledHeaderContainer, StyledHeaderWrapper } from './styled'
 
-interface PropTypes {
+type ChildrenType = {
   children: React.ReactNode
 }
 
-const HeaderContainer: NextPage<PropTypes> = ({ children }) => {
+const HeaderContainer = ({ children }: ChildrenType) => {
   return (
     <StyledHeaderWrapper>
       <StyledHeaderContainer>{children}</StyledHeaderContainer>
