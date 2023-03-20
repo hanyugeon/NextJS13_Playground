@@ -1,4 +1,3 @@
-'use client'
 import { icClose } from '@/assets/icons'
 import Image from 'next/image'
 import { NextPage } from 'next/types'

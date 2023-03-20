@@ -1,5 +1,3 @@
-'use client'
-
 import { NextPage } from 'next/types'
 import { StyledHeaderContainer, StyledHeaderWrapper } from './styled'
 

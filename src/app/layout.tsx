@@ -1,4 +1,7 @@
 import { notoSansKrFont } from '@/app/fonts'
+import Header from '@/components/Header'
+import SideBar from '@/components/SideBar'
+import { StyledTemplate } from '@/components/Template'
 import GlobalStyle from '@/styles/GlobalStyle'
 import { NextPage } from 'next/types'
 
@@ -11,7 +14,11 @@ const RootLayout: NextPage<PropTpyes> = ({ children }) => {
     <html lang="ko-KR" className={`${notoSansKrFont.className}`}>
       <GlobalStyle />
       <head />
-      <body>{children}</body>
+      <body>
+        <SideBar />
+        <Header />
+        <StyledTemplate>{children}</StyledTemplate>
+      </body>
     </html>
   )
 }

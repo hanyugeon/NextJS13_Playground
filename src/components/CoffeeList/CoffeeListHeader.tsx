@@ -1,5 +1,3 @@
-'use client'
-
 import { NextPage } from 'next/types'
 import {
   StyledCoffeeListHeaderContainer,
