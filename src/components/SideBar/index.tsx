@@ -1,8 +1,7 @@
-import { NextPage } from 'next/types'
 import SideBarNav from './SideBarNav'
 import { StyledSideBarContainer } from './styled'
 
-const SideBar: NextPage = () => {
+const SideBar = () => {
   return (
     <StyledSideBarContainer>
       <SideBarNav />
