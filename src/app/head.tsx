@@ -1,6 +1,4 @@
-import { NextPage } from 'next/types'
-
-const Head: NextPage = () => {
+const Head = () => {
   return (
     <>
       <title>NextJs13 PlayGround</title>

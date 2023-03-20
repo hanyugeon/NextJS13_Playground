@@ -1,6 +1,4 @@
-import { NextPage } from 'next/types'
-
-const Tech: NextPage = () => {
+const Tech = () => {
   return <></>
 }
 

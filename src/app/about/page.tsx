@@ -1,6 +1,4 @@
-import { NextPage } from 'next/types'
-
-const About: NextPage = () => {
+const About = () => {
   return <></>
 }
 
