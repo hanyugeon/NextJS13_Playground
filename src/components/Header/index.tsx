@@ -2,11 +2,15 @@ import HeaderContainer from './HeaderContainer'
 import HeaderLogo from './HeaderLogo'
 import HeaderNav from './HeaderNav'
 
-const Header = () => {
+interface HeaderTypes {
+  toggleSideBar: () => void
+}
+
+const Header = ({ toggleSideBar }: HeaderTypes) => {
   return (
     <HeaderContainer>
       <HeaderLogo />
-      <HeaderNav />
+      <HeaderNav toggleSideBar={toggleSideBar} />
     </HeaderContainer>
   )
 }

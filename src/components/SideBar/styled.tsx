@@ -4,17 +4,17 @@ import BREAKPOINTS from '@/styles/BreakPoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledSideBarWrapper = styled.aside`
+const StyledSideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   z-index: 2;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(1rem);
 
-  @media (min-width: ${BREAKPOINTS.mobile}px) {
-    display: none;
+  @media (max-width: ${BREAKPOINTS.mobile}px) {
+    display: ${(props) => (props.isSideBarOpen ? 'flex' : 'none')};
   }
 `
 

@@ -23,11 +23,16 @@ const NAV_LINK_CONTENTS = [
   },
 ]
 
-const SideBar = () => {
+interface SideBarTypes {
+  toggleSideBar: () => void
+  isSideBarOpen: boolean
+}
+
+const SideBar = ({ toggleSideBar, isSideBarOpen }: SideBarTypes) => {
   return (
-    <StyledSideBarWrapper>
+    <StyledSideBarWrapper isSideBarOpen={isSideBarOpen}>
       <StyledSideBar>
-        <SideBarCloseButton />
+        <SideBarCloseButton toggleSideBar={toggleSideBar} />
         <StyledSideBarMenuContainer>
           {NAV_MENU_CONTENTS.map((content) => (
             <SideBarMenuItem

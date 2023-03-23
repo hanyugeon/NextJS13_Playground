@@ -34,7 +34,11 @@ const NAV_LINK_CONTENTS = [
  * 이후에 분리작업 할 것
  */
 
-const HeaderNav = () => {
+interface HeaderNavTypes {
+  toggleSideBar: () => void
+}
+
+const HeaderNav = ({ toggleSideBar }: HeaderNavTypes) => {
   return (
     <StyledHeaderNav>
       <StyledHeaderNavMenu>
@@ -58,7 +62,7 @@ const HeaderNav = () => {
           />
         ))}
       </StyledHeaderNavLink>
-      <HeaderHamburger />
+      <HeaderHamburger toggleSideBar={toggleSideBar} />
     </StyledHeaderNav>
   )
 }

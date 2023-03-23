@@ -8,10 +8,20 @@ import { StyledHeaderHamburger } from './styled'
  * 상위 컴포넌트에서 Image의 크기를 명시하면 안나는것 같음
  */
 
-const HeaderHamburger = () => {
+interface HeaderHamburgerTypes {
+  toggleSideBar: () => void
+}
+
+const HeaderHamburger = ({ toggleSideBar }: HeaderHamburgerTypes) => {
   return (
     <StyledHeaderHamburger aria-label={'NavigationToggle'}>
-      <Image width={30} height={30} src={icHamburger} alt="" />
+      <Image
+        onClick={toggleSideBar}
+        width={30}
+        height={30}
+        src={icHamburger}
+        alt=""
+      />
     </StyledHeaderHamburger>
   )
 }
