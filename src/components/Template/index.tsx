@@ -1,16 +1,37 @@
 'use client'
 
-import BREAKPOINTS from '@/styles/BreakPoints'
-import styled from '@emotion/styled'
+import Header from '@/components/Header'
+import SideBar from '@/components/SideBar'
+import { useState } from 'react'
+import { StyledTemplate } from './styled'
 
-export const StyledTemplate = styled.main`
-  display: flex;
-  justify-content: space-around;
-  padding: 18rem 16rem 10rem 16rem;
-  width: 100%;
-  height: 100%;
+type ChildrenType = {
+  children: React.ReactNode
+}
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
-    padding: 12rem 4rem 8rem 4rem;
+const Template = ({ children }: ChildrenType) => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(false)
+
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen)
   }
-`
+
+  /**
+   * @todo
+   * Props Drilling 때문에 정신이 혼미하다
+   * 이전에 개같이 코드를 써놓은 나를 탓하자
+   *
+   * 일단 기능 동작하는대로 PR올리고
+   * 그 다음 이슈에서는 Header와 SideBar컴포넌트를 더 리팩터링 해야겠다
+   */
+
+  return (
+    <>
+      <SideBar toggleSideBar={toggleSideBar} isSideBarOpen={isSideBarOpen} />
+      <Header toggleSideBar={toggleSideBar} />
+      <StyledTemplate>{children}</StyledTemplate>
+    </>
+  )
+}
+
+export default Template

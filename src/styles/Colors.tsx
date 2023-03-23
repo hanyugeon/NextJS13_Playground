@@ -1,5 +1,3 @@
-'use client'
-
 export const COLOR = {
   brand1: '#FF4713',
   brand2: '#FF7C58',

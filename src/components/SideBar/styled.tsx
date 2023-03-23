@@ -4,21 +4,21 @@ import BREAKPOINTS from '@/styles/BreakPoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledSideBarContainer = styled.aside`
+const StyledSideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   z-index: 2;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(1rem);
 
-  @media (min-width: ${BREAKPOINTS.mobile}px) {
-    display: none;
+  @media (max-width: ${BREAKPOINTS.mobile}px) {
+    display: ${(props) => (props.isSideBarOpen ? 'flex' : 'none')};
   }
 `
 
-const StyledSideBarNav = styled.aside`
+const StyledSideBar = styled.aside`
   width: 32rem;
   height: 100%;
   background-color: ${COLOR.white};
@@ -29,11 +29,9 @@ const StyledSideBarCloseButton = styled.button`
   margin: 2rem;
   padding: 0;
   right: 0;
-  width: 2.2rem;
-  height: 2.2rem;
 `
 
-const StyledSideBarNavMenu = styled.nav`
+const StyledSideBarMenuContainer = styled.nav`
   display: grid;
   align-content: start;
   justify-content: center;
@@ -42,24 +40,25 @@ const StyledSideBarNavMenu = styled.nav`
   gap: 3.2rem;
   width: 100%;
   height: 100%;
+
+  > a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: ${COLOR.brand1};
+  }
 `
 
-const StyledSideBarNavMenuItem = styled.span`
-  font-size: 2rem;
-  font-weight: bold;
-  color: ${COLOR.brand1};
-`
-
-const StyledSideBarNavLink = styled.nav`
-  width: 3rem;
-  height: 3rem;
+const StyledSideBarLinkContainer = styled.nav`
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export {
-  StyledSideBarContainer,
-  StyledSideBarNav,
+  StyledSideBarWrapper,
+  StyledSideBar,
   StyledSideBarCloseButton,
-  StyledSideBarNavMenu,
-  StyledSideBarNavMenuItem,
-  StyledSideBarNavLink,
+  StyledSideBarMenuContainer,
+  StyledSideBarLinkContainer,
 }

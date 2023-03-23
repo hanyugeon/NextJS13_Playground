@@ -1,7 +1,5 @@
-import Header from '@/components/Header'
-import SideBar from '@/components/SideBar'
-import { StyledTemplate } from '@/components/Template'
 import { notoSansKrFont } from '@/app/fonts'
+import Template from '@/components/Template'
 import GlobalStyle from '@/styles/GlobalStyle'
 
 type ChildrenType = {
@@ -14,9 +12,7 @@ const RootLayout = ({ children }: ChildrenType) => {
       <GlobalStyle />
       <head />
       <body>
-        <SideBar />
-        <Header />
-        <StyledTemplate>{children}</StyledTemplate>
+        <Template>{children}</Template>
       </body>
     </html>
   )
