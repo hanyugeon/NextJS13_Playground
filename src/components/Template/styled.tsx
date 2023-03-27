@@ -1,7 +1,7 @@
 import BREAKPOINTS from '@/styles/BreakPoints'
 import styled from '@emotion/styled'
 
-export const StyledTemplate = styled.main`
+export const Template = styled.main`
   display: flex;
   justify-content: space-around;
   padding: 18rem 16rem 10rem 16rem;

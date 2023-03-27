@@ -1,15 +1,15 @@
 import { icLogo } from '@/assets/icons'
 import Image from 'next/image'
 import Link from 'next/link'
-import { StyledHeaderLogo } from './styled'
+import * as S from './styled'
 
 const HeaderLogo = () => {
   return (
-    <StyledHeaderLogo>
-      <Link href="/">
+    <S.HeaderLogo>
+      <Link href="/" aria-label={'MainLogo'}>
         <Image width={244} height={90} src={icLogo} alt="" priority={true} />
       </Link>
-    </StyledHeaderLogo>
+    </S.HeaderLogo>
   )
 }
 

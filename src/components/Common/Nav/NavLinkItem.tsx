@@ -10,7 +10,6 @@ interface NavLinkItemTypes {
 const NavLinkItem = ({ title, href, icon }: NavLinkItemTypes) => {
   return (
     <Link
-      key={title}
       href={href}
       aria-label={title}
       target="_blank"

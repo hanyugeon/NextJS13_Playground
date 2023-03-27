@@ -3,7 +3,7 @@
 import Header from '@/components/Header'
 import SideBar from '@/components/SideBar'
 import { useState } from 'react'
-import { StyledTemplate } from './styled'
+import * as S from './styled'
 
 type ChildrenType = {
   children: React.ReactNode
@@ -20,7 +20,7 @@ const Template = ({ children }: ChildrenType) => {
     <>
       <SideBar toggleSideBar={toggleSideBar} isSideBarOpen={isSideBarOpen} />
       <Header toggleSideBar={toggleSideBar} />
-      <StyledTemplate>{children}</StyledTemplate>
+      <S.Template>{children}</S.Template>
     </>
   )
 }
