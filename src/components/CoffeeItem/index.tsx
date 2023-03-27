@@ -1,6 +1,6 @@
 'use client'
 
-import { useToggle } from '@/hooks'
+import { useStateToggle } from '@/hooks'
 import CoffeeItemCheckBox from './CoffeeItemCheckBox'
 import CoffeeItemContainer from './CoffeeItemContainer'
 import CoffeeItemContent from './CoffeeItemContent'
@@ -11,8 +11,8 @@ interface CoffeeTypes {
 }
 
 const CoffeeItem = ({ coffeeTitle }: CoffeeTypes) => {
-  const [isHottest, setIsHottest] = useToggle()
-  const [isSoldOut, setIsSoldOut] = useToggle()
+  const [isHottest, setIsHottest] = useStateToggle()
+  const [isSoldOut, setIsSoldOut] = useStateToggle()
 
   return (
     <CoffeeItemContainer>

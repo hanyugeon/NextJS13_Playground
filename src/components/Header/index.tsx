@@ -9,10 +9,10 @@ import HeaderLogo from './HeaderLogo'
 import * as S from './styled'
 
 interface HeaderTypes {
-  toggleSideBar: () => void
+  onOpen: () => void
 }
 
-const Header = ({ toggleSideBar }: HeaderTypes) => {
+const Header = ({ onOpen }: HeaderTypes) => {
   return (
     <S.HeaderWrapper>
       <S.Header>
@@ -39,7 +39,7 @@ const Header = ({ toggleSideBar }: HeaderTypes) => {
           </S.HeaderNavLink>
           <S.HeaderHamburger aria-label={'SideBarOpen'}>
             <Image
-              onClick={toggleSideBar}
+              onClick={onOpen}
               width={30}
               height={30}
               src={icHamburger}

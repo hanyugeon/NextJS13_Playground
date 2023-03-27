@@ -9,16 +9,12 @@ import { RefObject } from 'react'
 import * as S from './styled'
 
 interface SideBarTypes {
-  toggleSideBar: () => void
+  onClose: () => void
   isSideBarOpen: boolean
   sideBarRef: RefObject<HTMLDivElement>
 }
 
-const SideBar = ({
-  toggleSideBar,
-  isSideBarOpen,
-  sideBarRef,
-}: SideBarTypes) => {
+const SideBar = ({ onClose, isSideBarOpen, sideBarRef }: SideBarTypes) => {
   return (
     <S.SideBarWrapper isSideBarOpen={isSideBarOpen}>
       <S.SideBar ref={sideBarRef}>
@@ -26,7 +22,7 @@ const SideBar = ({
           <Image
             width={22}
             height={22}
-            onClick={toggleSideBar}
+            onClick={onClose}
             src={icClose}
             alt="SideBarClose"
           />
