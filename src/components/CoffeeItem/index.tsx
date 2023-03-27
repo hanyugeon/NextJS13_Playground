@@ -1,6 +1,6 @@
 'use client'
 
-import useToggle from '@/hooks/useToggle'
+import { useToggle } from '@/hooks'
 import CoffeeItemCheckBox from './CoffeeItemCheckBox'
 import CoffeeItemContainer from './CoffeeItemContainer'
 import CoffeeItemContent from './CoffeeItemContent'
