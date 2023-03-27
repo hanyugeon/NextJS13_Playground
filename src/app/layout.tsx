@@ -1,4 +1,4 @@
-import { notoSansKrFont } from '@/app/fonts'
+import { notoSansKrFont } from '@/styles/fonts'
 import Template from '@/components/Template'
 import GlobalStyle from '@/styles/GlobalStyle'
 
