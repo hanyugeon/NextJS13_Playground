@@ -1,26 +1,28 @@
 import { icClose } from '@/assets/icons'
-import Image from 'next/image'
 import { NavLinkItem, NavRouteItem } from '@/components/Common/Nav'
 import {
   NAV_LINK_CONTENTS,
   NAV_ROUTE_CONTENTS,
-} from '../Common/Nav/initialContents'
+} from '@/components/Common/Nav/initialContents'
+import Image from 'next/image'
+import { RefObject } from 'react'
 import * as S from './styled'
 
 interface SideBarTypes {
-  toggleSideBar: () => void
+  onClose: () => void
   isSideBarOpen: boolean
+  sideBarRef: RefObject<HTMLDivElement>
 }
 
-const SideBar = ({ toggleSideBar, isSideBarOpen }: SideBarTypes) => {
+const SideBar = ({ onClose, isSideBarOpen, sideBarRef }: SideBarTypes) => {
   return (
-    <S.SideBarWrapper isSideBarOpen={isSideBarOpen}>
-      <S.SideBar>
+    <S.SideBarWrapper isOpen={isSideBarOpen}>
+      <S.SideBar ref={sideBarRef}>
         <S.SideBarCloseButton aria-label={'SideBarClose'}>
           <Image
             width={22}
             height={22}
-            onClick={toggleSideBar}
+            onClick={onClose}
             src={icClose}
             alt="SideBarClose"
           />

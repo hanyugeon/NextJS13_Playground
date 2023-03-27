@@ -2,7 +2,9 @@
 
 import Header from '@/components/Header'
 import SideBar from '@/components/SideBar'
-import { useState } from 'react'
+import { useClickAway, useKeyPress, useModal } from '@/hooks'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import * as S from './styled'
 
 type ChildrenType = {
@@ -10,16 +12,34 @@ type ChildrenType = {
 }
 
 const Template = ({ children }: ChildrenType) => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(false)
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const {
+    isOpen: isSideBarOpen,
+    onOpen: onSideBarOpen,
+    onClose: onSideBarClose,
+  } = useModal(false)
+  const escKeyPressed = useKeyPress('Escape')
+  const sideBarRef = useRef<HTMLDivElement>(null)
 
-  const toggleSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen)
-  }
+  useEffect(() => {
+    return onSideBarClose
+  }, [pathname, searchParams])
+
+  useEffect(() => {
+    if (escKeyPressed) return onSideBarClose
+  }, [escKeyPressed])
+
+  useClickAway(sideBarRef, onSideBarClose)
 
   return (
     <>
-      <SideBar toggleSideBar={toggleSideBar} isSideBarOpen={isSideBarOpen} />
-      <Header toggleSideBar={toggleSideBar} />
+      <SideBar
+        sideBarRef={sideBarRef}
+        onClose={onSideBarClose}
+        isSideBarOpen={isSideBarOpen}
+      />
+      <Header onOpen={onSideBarOpen} />
       <S.Template>{children}</S.Template>
     </>
   )
