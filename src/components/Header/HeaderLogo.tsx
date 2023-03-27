@@ -5,7 +5,7 @@ import { StyledHeaderLogo } from './styled'
 const HeaderLogo = () => {
   return (
     <StyledHeaderLogo>
-      <Image src={icLogo} alt="" priority={true} />
+      <Image width={244} height={90} src={icLogo} alt="" priority={true} />
     </StyledHeaderLogo>
   )
 }
