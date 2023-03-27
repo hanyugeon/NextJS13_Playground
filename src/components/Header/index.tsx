@@ -6,14 +6,7 @@ import {
 } from '@/components/Common/Nav/initialContents'
 import Image from 'next/image'
 import HeaderLogo from './HeaderLogo'
-import {
-  StyledHeaderContainer,
-  StyledHeaderHamburger,
-  StyledHeaderNav,
-  StyledHeaderNavLink,
-  StyledHeaderNavMenu,
-  StyledHeaderWrapper,
-} from './styled'
+import * as S from './styled'
 
 interface HeaderTypes {
   toggleSideBar: () => void
@@ -21,11 +14,11 @@ interface HeaderTypes {
 
 const Header = ({ toggleSideBar }: HeaderTypes) => {
   return (
-    <StyledHeaderWrapper>
-      <StyledHeaderContainer>
+    <S.HeaderWrapper>
+      <S.Header>
         <HeaderLogo />
-        <StyledHeaderNav>
-          <StyledHeaderNavMenu>
+        <S.HeaderNav>
+          <S.HeaderNavMenu>
             {NAV_ROUTE_CONTENTS.map((content) => (
               <NavRouteItem
                 key={content.title}
@@ -33,8 +26,8 @@ const Header = ({ toggleSideBar }: HeaderTypes) => {
                 title={content.title}
               />
             ))}
-          </StyledHeaderNavMenu>
-          <StyledHeaderNavLink>
+          </S.HeaderNavMenu>
+          <S.HeaderNavLink>
             {NAV_LINK_CONTENTS.map((content) => (
               <NavLinkItem
                 key={content.title}
@@ -43,8 +36,8 @@ const Header = ({ toggleSideBar }: HeaderTypes) => {
                 icon={content.icon}
               />
             ))}
-          </StyledHeaderNavLink>
-          <StyledHeaderHamburger aria-label={'NavigationToggle'}>
+          </S.HeaderNavLink>
+          <S.HeaderHamburger aria-label={'NavigationToggle'}>
             <Image
               onClick={toggleSideBar}
               width={30}
@@ -52,10 +45,10 @@ const Header = ({ toggleSideBar }: HeaderTypes) => {
               src={icHamburger}
               alt="SideBarHamburder"
             />
-          </StyledHeaderHamburger>
-        </StyledHeaderNav>
-      </StyledHeaderContainer>
-    </StyledHeaderWrapper>
+          </S.HeaderHamburger>
+        </S.HeaderNav>
+      </S.Header>
+    </S.HeaderWrapper>
   )
 }
 

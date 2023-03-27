@@ -1,8 +1,8 @@
-import { COLOR } from '@/styles/Colors'
 import BREAKPOINTS from '@/styles/BreakPoints'
+import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledHeaderWrapper = styled.header`
+const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ const StyledHeaderWrapper = styled.header`
   }
 `
 
-const StyledHeader = styled.nav`
+const Header = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@ const StyledHeader = styled.nav`
   }
 `
 
-const StyledHeaderLogo = styled.nav`
+const HeaderLogo = styled.nav`
   width: 24.4rem;
 
   @media (max-width: ${BREAKPOINTS.mobile}px) {
@@ -45,7 +45,7 @@ const StyledHeaderLogo = styled.nav`
   }
 `
 
-const StyledHeaderNav = styled.nav`
+const HeaderNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@ const StyledHeaderNav = styled.nav`
   }
 `
 
-const StyledHeaderNavMenu = styled.nav`
+const HeaderNavMenu = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -82,7 +82,7 @@ const StyledHeaderNavMenu = styled.nav`
   }
 `
 
-const StyledHeaderNavLink = styled.nav`
+const HeaderNavLink = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -90,7 +90,7 @@ const StyledHeaderNavLink = styled.nav`
   height: 100%;
 `
 
-const StyledHeaderHamburger = styled.button`
+const HeaderHamburger = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -103,11 +103,11 @@ const StyledHeaderHamburger = styled.button`
 `
 
 export {
-  StyledHeaderWrapper,
-  StyledHeader as StyledHeaderContainer,
-  StyledHeaderLogo,
-  StyledHeaderNav,
-  StyledHeaderNavMenu,
-  StyledHeaderNavLink,
-  StyledHeaderHamburger,
+  HeaderWrapper,
+  Header,
+  HeaderLogo,
+  HeaderNav,
+  HeaderNavMenu,
+  HeaderNavLink,
+  HeaderHamburger,
 }
