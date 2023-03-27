@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header'
 import SideBar from '@/components/SideBar'
-import { useState } from 'react'
+import useToggle from '@/hooks/useToggle'
 import * as S from './styled'
 
 type ChildrenType = {
@@ -10,11 +10,7 @@ type ChildrenType = {
 }
 
 const Template = ({ children }: ChildrenType) => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(false)
-
-  const toggleSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen)
-  }
+  const [isSideBarOpen, toggleSideBar] = useToggle()
 
   return (
     <>
