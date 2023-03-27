@@ -6,7 +6,7 @@ import * as S from './styled'
 const HeaderLogo = () => {
   return (
     <S.HeaderLogo>
-      <Link href="/">
+      <Link href="/" aria-label={'MainLogo'}>
         <Image width={244} height={90} src={icLogo} alt="" priority={true} />
       </Link>
     </S.HeaderLogo>

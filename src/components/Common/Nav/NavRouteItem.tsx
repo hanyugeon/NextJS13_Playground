@@ -7,7 +7,7 @@ interface NavRouteItemTypes {
 
 const NavRouteItem = ({ href, title }: NavRouteItemTypes) => {
   return (
-    <Link href={href} title={title}>
+    <Link href={href} title={title} aria-label={title}>
       {title}
     </Link>
   )
