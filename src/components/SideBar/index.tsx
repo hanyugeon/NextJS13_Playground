@@ -16,7 +16,7 @@ interface SideBarTypes {
 
 const SideBar = ({ onClose, isSideBarOpen, sideBarRef }: SideBarTypes) => {
   return (
-    <S.SideBarWrapper isSideBarOpen={isSideBarOpen}>
+    <S.SideBarWrapper isOpen={isSideBarOpen}>
       <S.SideBar ref={sideBarRef}>
         <S.SideBarCloseButton aria-label={'SideBarClose'}>
           <Image

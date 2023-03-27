@@ -2,8 +2,8 @@ import BREAKPOINTS from '@/styles/BreakPoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const SideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
-  position: fixed;
+const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
+  position: absolute;
   display: none;
   justify-content: flex-end;
   z-index: 2;
@@ -12,13 +12,30 @@ const SideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
   backdrop-filter: blur(1rem);
 
   @media (max-width: ${BREAKPOINTS.mobile}px) {
-    display: ${(props) => (props.isSideBarOpen ? 'flex' : 'none')};
+    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+
+    > aside {
+      animation: ease-in-out 0.6s ${(props) => (props.isOpen ? 'showUp' : '')};
+    }
+
+    @keyframes showUp {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 `
 
+// const SideBar = styled.aside<{ isOpen: boolean }>`
 const SideBar = styled.aside`
+  position: absolute;
   width: 32rem;
   height: 100%;
+  right: 0;
+  z-index: 3;
   background-color: ${COLOR.white};
 `
 
