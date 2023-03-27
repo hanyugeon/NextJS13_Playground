@@ -1,17 +1,11 @@
 import { icClose } from '@/assets/icons'
 import Image from 'next/image'
-import { NavLinkItem, NavRouteItem } from '../Common/Nav'
+import { NavLinkItem, NavRouteItem } from '@/components/Common/Nav'
 import {
   NAV_LINK_CONTENTS,
   NAV_ROUTE_CONTENTS,
 } from '../Common/Nav/initialContents'
-import {
-  StyledSideBar,
-  StyledSideBarCloseButton,
-  StyledSideBarNavLinkContainer,
-  StyledSideBarNavContainer,
-  StyledSideBarWrapper,
-} from './styled'
+import * as S from './styled'
 
 interface SideBarTypes {
   toggleSideBar: () => void
@@ -20,18 +14,18 @@ interface SideBarTypes {
 
 const SideBar = ({ toggleSideBar, isSideBarOpen }: SideBarTypes) => {
   return (
-    <StyledSideBarWrapper isSideBarOpen={isSideBarOpen}>
-      <StyledSideBar>
-        <StyledSideBarCloseButton aria-label={'SideBarCloseButton'}>
+    <S.SideBarWrapper isSideBarOpen={isSideBarOpen}>
+      <S.SideBar>
+        <S.SideBarCloseButton aria-label={'SideBarClose'}>
           <Image
             width={22}
             height={22}
             onClick={toggleSideBar}
             src={icClose}
-            alt="SideBarCloseIcon"
+            alt="SideBarClose"
           />
-        </StyledSideBarCloseButton>
-        <StyledSideBarNavContainer>
+        </S.SideBarCloseButton>
+        <S.SideBarNavContainer>
           {NAV_ROUTE_CONTENTS.map((content) => (
             <NavRouteItem
               key={content.title}
@@ -39,7 +33,7 @@ const SideBar = ({ toggleSideBar, isSideBarOpen }: SideBarTypes) => {
               title={content.title}
             />
           ))}
-          <StyledSideBarNavLinkContainer>
+          <S.SideBarNavLinkContainer>
             {NAV_LINK_CONTENTS.map((content) => (
               <NavLinkItem
                 key={content.title}
@@ -48,10 +42,10 @@ const SideBar = ({ toggleSideBar, isSideBarOpen }: SideBarTypes) => {
                 icon={content.icon}
               />
             ))}
-          </StyledSideBarNavLinkContainer>
-        </StyledSideBarNavContainer>
-      </StyledSideBar>
-    </StyledSideBarWrapper>
+          </S.SideBarNavLinkContainer>
+        </S.SideBarNavContainer>
+      </S.SideBar>
+    </S.SideBarWrapper>
   )
 }
 
