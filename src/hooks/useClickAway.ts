@@ -1,15 +1,6 @@
 import { RefObject, useCallback, useEffect } from 'react'
 
-/**
- *
- * @param isOpen
- * @param ref
- * @param handler
- * @returns
- */
-
 export const useClickAway = <T extends HTMLElement>(
-  isOpen: boolean,
   ref: RefObject<T>,
   handler: (event: MouseEvent | TouchEvent) => void,
 ) => {
@@ -25,8 +16,6 @@ export const useClickAway = <T extends HTMLElement>(
   )
 
   useEffect(() => {
-    if (!isOpen) return
-
     document.addEventListener('mousedown', listener)
     document.addEventListener('touchstart', listener)
 
@@ -34,5 +23,5 @@ export const useClickAway = <T extends HTMLElement>(
       document.removeEventListener('mousedown', listener)
       document.removeEventListener('touchstart', listener)
     }
-  }, [isOpen, ref, listener])
+  }, [ref, listener])
 }
