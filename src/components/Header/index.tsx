@@ -37,13 +37,13 @@ const Header = ({ toggleSideBar }: HeaderTypes) => {
               />
             ))}
           </S.HeaderNavLink>
-          <S.HeaderHamburger aria-label={'NavigationToggle'}>
+          <S.HeaderHamburger aria-label={'SideBarOpen'}>
             <Image
               onClick={toggleSideBar}
               width={30}
               height={30}
               src={icHamburger}
-              alt="SideBarHamburder"
+              alt="SideBarOpen"
             />
           </S.HeaderHamburger>
         </S.HeaderNav>
