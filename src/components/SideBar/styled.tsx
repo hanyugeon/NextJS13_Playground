@@ -2,7 +2,7 @@ import BREAKPOINTS from '@/styles/BreakPoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledSideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
+const SideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
   position: fixed;
   display: none;
   justify-content: flex-end;
@@ -16,20 +16,20 @@ const StyledSideBarWrapper = styled.aside<{ isSideBarOpen: boolean }>`
   }
 `
 
-const StyledSideBar = styled.aside`
+const SideBar = styled.aside`
   width: 32rem;
   height: 100%;
   background-color: ${COLOR.white};
 `
 
-const StyledSideBarCloseButton = styled.button`
+const SideBarCloseButton = styled.button`
   position: absolute;
   margin: 2rem;
   padding: 0;
   right: 0;
 `
 
-const StyledSideBarNavContainer = styled.nav`
+const SideBarNavContainer = styled.nav`
   display: grid;
   align-content: start;
   justify-content: center;
@@ -46,7 +46,7 @@ const StyledSideBarNavContainer = styled.nav`
   }
 `
 
-const StyledSideBarNavLinkContainer = styled.nav`
+const SideBarNavLinkContainer = styled.nav`
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
@@ -54,9 +54,9 @@ const StyledSideBarNavLinkContainer = styled.nav`
 `
 
 export {
-  StyledSideBarWrapper,
-  StyledSideBar,
-  StyledSideBarCloseButton,
-  StyledSideBarNavContainer,
-  StyledSideBarNavLinkContainer,
+  SideBarWrapper,
+  SideBar,
+  SideBarCloseButton,
+  SideBarNavContainer,
+  SideBarNavLinkContainer,
 }
