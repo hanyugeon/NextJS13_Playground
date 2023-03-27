@@ -1,27 +1,17 @@
-import { icGithub } from '@/assets/icons'
-import SideBarCloseButton from './SideBarCloseButton'
-import SideBarLinkItem from './SideBarLinkItem'
-import SideBarMenuItem from './SideBarMenuItem'
+import { icClose } from '@/assets/icons'
+import Image from 'next/image'
+import { NavLinkItem, NavRouteItem } from '../Common/Nav'
+import {
+  NAV_LINK_CONTENTS,
+  NAV_ROUTE_CONTENTS,
+} from '../Common/Nav/initialContents'
 import {
   StyledSideBar,
-  StyledSideBarLinkContainer,
-  StyledSideBarMenuContainer,
+  StyledSideBarCloseButton,
+  StyledSideBarNavLinkContainer,
+  StyledSideBarNavContainer,
   StyledSideBarWrapper,
 } from './styled'
-
-const NAV_MENU_CONTENTS = [
-  { href: '/', variant: 'menu', title: '커피 목록' },
-  { href: '/tech', variant: 'menu', title: '기술 스택' },
-  { href: '/about', variant: 'menu', title: '만든 계기' },
-]
-const NAV_LINK_CONTENTS = [
-  {
-    href: 'https:/github.com/hanyugeon',
-    variant: 'link',
-    title: 'github',
-    icon: icGithub,
-  },
-]
 
 interface SideBarTypes {
   toggleSideBar: () => void
@@ -32,26 +22,34 @@ const SideBar = ({ toggleSideBar, isSideBarOpen }: SideBarTypes) => {
   return (
     <StyledSideBarWrapper isSideBarOpen={isSideBarOpen}>
       <StyledSideBar>
-        <SideBarCloseButton toggleSideBar={toggleSideBar} />
-        <StyledSideBarMenuContainer>
-          {NAV_MENU_CONTENTS.map((content) => (
-            <SideBarMenuItem
+        <StyledSideBarCloseButton aria-label={'SideBarCloseButton'}>
+          <Image
+            width={22}
+            height={22}
+            onClick={toggleSideBar}
+            src={icClose}
+            alt="SideBarCloseIcon"
+          />
+        </StyledSideBarCloseButton>
+        <StyledSideBarNavContainer>
+          {NAV_ROUTE_CONTENTS.map((content) => (
+            <NavRouteItem
               key={content.title}
               href={content.href}
               title={content.title}
             />
           ))}
-          <StyledSideBarLinkContainer>
+          <StyledSideBarNavLinkContainer>
             {NAV_LINK_CONTENTS.map((content) => (
-              <SideBarLinkItem
+              <NavLinkItem
                 key={content.title}
                 href={content.href}
                 title={content.title}
                 icon={content.icon}
               />
             ))}
-          </StyledSideBarLinkContainer>
-        </StyledSideBarMenuContainer>
+          </StyledSideBarNavLinkContainer>
+        </StyledSideBarNavContainer>
       </StyledSideBar>
     </StyledSideBarWrapper>
   )

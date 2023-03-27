@@ -1,5 +1,3 @@
-'use client'
-
 import BREAKPOINTS from '@/styles/BreakPoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
@@ -31,7 +29,7 @@ const StyledSideBarCloseButton = styled.button`
   right: 0;
 `
 
-const StyledSideBarMenuContainer = styled.nav`
+const StyledSideBarNavContainer = styled.nav`
   display: grid;
   align-content: start;
   justify-content: center;
@@ -48,7 +46,7 @@ const StyledSideBarMenuContainer = styled.nav`
   }
 `
 
-const StyledSideBarLinkContainer = styled.nav`
+const StyledSideBarNavLinkContainer = styled.nav`
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
@@ -59,6 +57,6 @@ export {
   StyledSideBarWrapper,
   StyledSideBar,
   StyledSideBarCloseButton,
-  StyledSideBarMenuContainer,
-  StyledSideBarLinkContainer,
+  StyledSideBarNavContainer,
+  StyledSideBarNavLinkContainer,
 }

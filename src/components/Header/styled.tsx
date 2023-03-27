@@ -1,10 +1,8 @@
-'use client'
-
 import { COLOR } from '@/styles/Colors'
 import BREAKPOINTS from '@/styles/BreakPoints'
 import styled from '@emotion/styled'
 
-const StyledHeaderWrapper = styled.nav`
+const StyledHeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +19,7 @@ const StyledHeaderWrapper = styled.nav`
   }
 `
 
-const StyledHeaderContainer = styled.header`
+const StyledHeader = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +39,7 @@ const StyledHeaderLogo = styled.nav`
   @media (max-width: ${BREAKPOINTS.mobile}px) {
     width: 10rem;
 
-    > img {
+    img {
       width: 10rem;
     }
   }
@@ -76,11 +74,12 @@ const StyledHeaderNavMenu = styled.nav`
   align-items: center;
   width: 100%;
   height: 100%;
-`
 
-const StyledHeaderNavMenuItem = styled.span`
-  font-size: 1.8rem;
-  color: ${COLOR.brand1};
+  > a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: ${COLOR.brand1};
+  }
 `
 
 const StyledHeaderNavLink = styled.nav`
@@ -105,11 +104,10 @@ const StyledHeaderHamburger = styled.button`
 
 export {
   StyledHeaderWrapper,
-  StyledHeaderContainer,
+  StyledHeader as StyledHeaderContainer,
   StyledHeaderLogo,
   StyledHeaderNav,
   StyledHeaderNavMenu,
-  StyledHeaderNavMenuItem,
   StyledHeaderNavLink,
   StyledHeaderHamburger,
 }

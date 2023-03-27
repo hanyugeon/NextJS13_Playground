@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface SideBarLinkItemTypes {
+interface NavLinkItemTypes {
   title: string
   href: string
   icon: string
 }
 
-const SideBarLinkItem = ({ title, href, icon }: SideBarLinkItemTypes) => {
+const NavLinkItem = ({ title, href, icon }: NavLinkItemTypes) => {
   return (
     <Link
       key={title}
@@ -21,4 +21,4 @@ const SideBarLinkItem = ({ title, href, icon }: SideBarLinkItemTypes) => {
   )
 }
 
-export default SideBarLinkItem
+export default NavLinkItem

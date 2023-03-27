@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-interface SideBarMenuItemTypes {
+interface NavRouteItemTypes {
   href: string
   title: string
 }
 
-const SideBarMenuItem = ({ href, title }: SideBarMenuItemTypes) => {
+const NavRouteItem = ({ href, title }: NavRouteItemTypes) => {
   return (
     <Link href={href} title={title}>
       {title}
@@ -13,4 +13,4 @@ const SideBarMenuItem = ({ href, title }: SideBarMenuItemTypes) => {
   )
 }
 
-export default SideBarMenuItem
+export default NavRouteItem
