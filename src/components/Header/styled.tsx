@@ -39,7 +39,7 @@ const StyledHeaderLogo = styled.nav`
   @media (max-width: ${BREAKPOINTS.mobile}px) {
     width: 10rem;
 
-    > img {
+    img {
       width: 10rem;
     }
   }
