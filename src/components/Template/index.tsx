@@ -2,9 +2,8 @@
 
 import Header from '@/components/Header'
 import SideBar from '@/components/SideBar'
-import useKeyPress from '@/hooks/useKeyPress'
-import useToggle from '@/hooks/useToggle'
-import { useEffect } from 'react'
+import { useClickAway, useKeyPress, useToggle } from '@/hooks'
+import { useCallback, useEffect, useRef } from 'react'
 import * as S from './styled'
 
 type ChildrenType = {
@@ -14,16 +13,23 @@ type ChildrenType = {
 const Template = ({ children }: ChildrenType) => {
   const [isSideBarOpen, toggleSideBar] = useToggle()
   const escKeyPressed = useKeyPress('Escape')
+  const sideBarRef = useRef<HTMLDivElement>(null)
+
+  useClickAway(isSideBarOpen, sideBarRef, toggleSideBar)
 
   useEffect(() => {
     if (isSideBarOpen && escKeyPressed) {
-      return toggleSideBar()
+      return toggleSideBar
     }
   }, [isSideBarOpen, toggleSideBar, escKeyPressed])
 
   return (
     <>
-      <SideBar toggleSideBar={toggleSideBar} isSideBarOpen={isSideBarOpen} />
+      <SideBar
+        sideBarRef={sideBarRef}
+        toggleSideBar={toggleSideBar}
+        isSideBarOpen={isSideBarOpen}
+      />
       <Header toggleSideBar={toggleSideBar} />
       <S.Template>{children}</S.Template>
     </>
