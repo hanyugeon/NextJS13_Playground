@@ -1,3 +1,4 @@
 export { useClickAway } from './useClickAway'
 export { useKeyPress } from './useKeyPress'
-export { useToggle } from './useToggle'
+export { useStateToggle } from './useStateToggle'
+export { useModal } from './useModal'
