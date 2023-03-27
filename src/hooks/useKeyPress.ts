@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 
-const useKeyPress = (targetKey: string) => {
+export const useKeyPress = (targetKey: string) => {
   const [keyPressed, setKeyPressed] = useState<boolean>()
 
   const handleKeyDown = useCallback(
@@ -33,5 +33,3 @@ const useKeyPress = (targetKey: string) => {
 
   return keyPressed
 }
-
-export default useKeyPress
