@@ -1,9 +1,9 @@
 import { icHamburger } from '@/assets/icons'
-import { NavLinkItem, NavRouteItem } from '@/components/Common/Nav'
+import { NavLinkItem, NavRouteItem } from '@/ui/Common/Nav'
 import {
   NAV_LINK_CONTENTS,
   NAV_ROUTE_CONTENTS,
-} from '@/components/Common/Nav/initialContents'
+} from '@/ui/Common/Nav/initialContents'
 import Image from 'next/image'
 import HeaderLogo from './HeaderLogo'
 import * as S from './styled'

@@ -1,7 +1,7 @@
 'use client'
 
-import Header from '@/components/Header'
-import SideBar from '@/components/SideBar'
+import Header from '@/ui/Header'
+import SideBar from '@/ui/SideBar'
 import { useClickAway, useKeyPress, useModal } from '@/hooks'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useRef } from 'react'

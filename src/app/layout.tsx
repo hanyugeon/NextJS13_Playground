@@ -1,5 +1,5 @@
 import { notoSansKrFont } from '@/styles/fonts'
-import Template from '@/components/Template'
+import Template from '@/ui/Template'
 import GlobalStyle from '@/styles/GlobalStyle'
 
 type ChildrenType = {
