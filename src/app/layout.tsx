@@ -1,5 +1,5 @@
+import TemplateProvider from '@/components/TemplateProvider'
 import { notoSansKrFont } from '@/styles/fonts'
-import Template from '@/ui/Template'
 import GlobalStyle from '@/styles/GlobalStyle'
 
 type ChildrenType = {
@@ -12,7 +12,7 @@ const RootLayout = ({ children }: ChildrenType) => {
       <GlobalStyle />
       <head />
       <body>
-        <Template>{children}</Template>
+        <TemplateProvider>{children}</TemplateProvider>
       </body>
     </html>
   )
