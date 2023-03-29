@@ -1,5 +1,5 @@
-import CoffeeItem from '@/components/CoffeeItem'
-import CoffeeList from '@/components/CoffeeList'
+import CoffeeItem from '@/ui/CoffeeItem'
+import CoffeeList from '@/ui/CoffeeList'
 import { DUMMY_DATA } from '@/pages/api/dummy'
 
 const Home = () => {
