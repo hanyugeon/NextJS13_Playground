@@ -5,13 +5,8 @@ import SideBar from '@/ui/SideBar'
 import { useClickAway, useKeyPress, useModal } from '@/hooks'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import * as S from './styled'
 
-type ChildrenType = {
-  children: React.ReactNode
-}
-
-const Template = ({ children }: ChildrenType) => {
+const NavigationTemplate = () => {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const {
@@ -40,9 +35,8 @@ const Template = ({ children }: ChildrenType) => {
         isSideBarOpen={isSideBarOpen}
       />
       <Header onOpen={onSideBarOpen} />
-      <S.Template>{children}</S.Template>
     </>
   )
 }
 
-export default Template
+export default NavigationTemplate
