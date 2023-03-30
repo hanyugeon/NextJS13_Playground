@@ -4,7 +4,7 @@ import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledCoffeeItemContainer = styled.article`
+const CoffeeItemContainer = styled.article`
   display: flex;
   width: 100%;
   height: 7.2rem;
@@ -31,46 +31,45 @@ const StyledCoffeeItemContainer = styled.article`
   div:nth-of-type(2) {
     width: 36%;
   }
-  div:nth-of-type(3) {
-    width: 20%;
-  }
-  div:nth-of-type(4) {
-    width: 20%;
-  }
 `
 
-const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
+const CoffeeItemImageWrapper = styled.div`
   height: 100%;
 
   > img {
     border-radius: 1.6rem;
-    visibility: ${({ isHottest }) => (isHottest ? 'visible' : 'hidden')};
+    object-fit: cover;
+
+    @media (max-width: ${BREAKPOINTS.mobile}px) {
+      width: 5.2rem;
+      height: 5.2rem;
+    }
   }
 `
 
-const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
+const CoffeeItemTitle = styled.div<{ isSoldOut: boolean }>`
   height: 100%;
   font-size: 2.2rem;
-  text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
-  color: ${(props) => (props.isSoldOut ? COLOR.gray : COLOR.black)};
+  text-decoration: ${({ isSoldOut }) => (isSoldOut ? 'line-through' : 'none')};
+  color: ${({ isSoldOut }) => (isSoldOut ? COLOR.gray : COLOR.black)};
 
   @media (max-width: ${BREAKPOINTS.tablet}px) {
     font-size: 1.8rem;
   }
+  @media (max-width: ${BREAKPOINTS.mobile}px) {
+    font-size: 1.6rem;
+  }
 `
 
-const StyledCoffeeItemCheckBox = styled.div`
-  height: 100%;
-`
-
-const StyledCoffeeItemCheckBoxElement = styled.button<{
+const CoffeeItemCheckBox = styled.button<{
   isChecked: boolean
   onClick: () => void
 }>`
   width: 2rem;
   height: 2rem;
-  background-color: ${(props) =>
-    props.isChecked ? `${COLOR.negative1}` : `${COLOR.negative3}`};
+  margin: auto;
+  background-color: ${({ isChecked }) =>
+    isChecked ? `${COLOR.negative1}` : `${COLOR.negative3}`};
   border-radius: 0.4rem;
   transition: all 200ms;
 
@@ -80,9 +79,8 @@ const StyledCoffeeItemCheckBoxElement = styled.button<{
 `
 
 export {
-  StyledCoffeeItemContainer,
-  StyledCoffeeItemHottest,
-  StyledCoffeeItemContent,
-  StyledCoffeeItemCheckBoxElement,
-  StyledCoffeeItemCheckBox,
+  CoffeeItemContainer,
+  CoffeeItemImageWrapper,
+  CoffeeItemTitle,
+  CoffeeItemCheckBox,
 }
