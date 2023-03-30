@@ -1,10 +1,8 @@
 'use client'
 
 import { useStateToggle } from '@/hooks'
-import CoffeeItemCheckBox from './CoffeeItemCheckBox'
-import CoffeeItemContainer from './CoffeeItemContainer'
-import CoffeeItemContent from './CoffeeItemContent'
-import CoffeeItemHottest from './CoffeeItemHottest'
+import Image from 'next/image'
+import * as S from './styled'
 
 interface CoffeeTypes {
   coffeeTitle: string
@@ -12,16 +10,26 @@ interface CoffeeTypes {
 }
 
 const CoffeeItem = ({ coffeeTitle, coffeeImage }: CoffeeTypes) => {
-  const [isHottest, setIsHottest] = useStateToggle(true)
+  const [isBestSeller, setIsBestSeller] = useStateToggle(false)
   const [isSoldOut, setIsSoldOut] = useStateToggle(false)
 
   return (
-    <CoffeeItemContainer>
-      <CoffeeItemHottest isHottest={isHottest} coffeeImage={coffeeImage} />
-      <CoffeeItemContent coffeeTitle={coffeeTitle} isSoldOut={isSoldOut} />
-      <CoffeeItemCheckBox isChecked={isHottest} onClick={setIsHottest} />
-      <CoffeeItemCheckBox isChecked={isSoldOut} onClick={setIsSoldOut} />
-    </CoffeeItemContainer>
+    <S.CoffeeItemContainer>
+      <S.CoffeeItemImageWrapper>
+        <Image width={60} height={60} src={coffeeImage} alt="BeverageImage" />
+      </S.CoffeeItemImageWrapper>
+      <S.CoffeeItemTitle isSoldOut={isSoldOut}>{coffeeTitle}</S.CoffeeItemTitle>
+      <S.CoffeeItemCheckBox
+        aria-label={'MenuOptionCheckBox'}
+        isChecked={isBestSeller}
+        onClick={setIsBestSeller}
+      />
+      <S.CoffeeItemCheckBox
+        aria-label={'MenuOptionCheckBox'}
+        isChecked={isSoldOut}
+        onClick={setIsSoldOut}
+      />
+    </S.CoffeeItemContainer>
   )
 }
 

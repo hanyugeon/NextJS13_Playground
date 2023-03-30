@@ -31,21 +31,14 @@ const CoffeeItemContainer = styled.article`
   div:nth-of-type(2) {
     width: 36%;
   }
-  div:nth-of-type(3) {
-    width: 20%;
-  }
-  div:nth-of-type(4) {
-    width: 20%;
-  }
 `
 
-const CoffeeItemHottest = styled.div<{ isHottest: boolean }>`
+const CoffeeItemImageWrapper = styled.div`
   height: 100%;
 
   > img {
     border-radius: 1.6rem;
     object-fit: cover;
-    visibility: ${({ isHottest }) => (isHottest ? 'visible' : 'hidden')};
 
     @media (max-width: ${BREAKPOINTS.mobile}px) {
       width: 5.2rem;
@@ -54,7 +47,7 @@ const CoffeeItemHottest = styled.div<{ isHottest: boolean }>`
   }
 `
 
-const CoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
+const CoffeeItemTitle = styled.div<{ isSoldOut: boolean }>`
   height: 100%;
   font-size: 2.2rem;
   text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
@@ -68,18 +61,15 @@ const CoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
   }
 `
 
-const CoffeeItemCheckBox = styled.div`
-  height: 100%;
-`
-
-const CoffeeItemCheckBoxElement = styled.button<{
+const CoffeeItemCheckBox = styled.button<{
   isChecked: boolean
   onClick: () => void
 }>`
   width: 2rem;
   height: 2rem;
-  background-color: ${(props) =>
-    props.isChecked ? `${COLOR.negative1}` : `${COLOR.negative3}`};
+  margin: auto;
+  background-color: ${({ isChecked }) =>
+    isChecked ? `${COLOR.negative1}` : `${COLOR.negative3}`};
   border-radius: 0.4rem;
   transition: all 200ms;
 
@@ -90,8 +80,7 @@ const CoffeeItemCheckBoxElement = styled.button<{
 
 export {
   CoffeeItemContainer,
-  CoffeeItemHottest,
-  CoffeeItemContent,
-  CoffeeItemCheckBoxElement,
+  CoffeeItemImageWrapper,
+  CoffeeItemTitle,
   CoffeeItemCheckBox,
 }
