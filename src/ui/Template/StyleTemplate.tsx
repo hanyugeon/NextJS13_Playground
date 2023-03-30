@@ -1,6 +1,6 @@
 'use client'
 
-import BREAKPOINTS from '@/styles/BreakPoints'
+import BREAKPOINTS from '@/styles/breakpoints'
 import styled from '@emotion/styled'
 
 const StyleTemplate = styled.main`
@@ -10,7 +10,7 @@ const StyleTemplate = styled.main`
   width: 100%;
   height: 100%;
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
     padding: 12rem 4rem 8rem 4rem;
   }
 `

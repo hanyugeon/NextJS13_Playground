@@ -1,4 +1,4 @@
-import BREAKPOINTS from '@/styles/BreakPoints'
+import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
@@ -11,7 +11,7 @@ const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
   height: 100%;
   backdrop-filter: blur(1rem);
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
     display: ${(props) => (props.isOpen ? 'flex' : 'none')};
 
     > aside {

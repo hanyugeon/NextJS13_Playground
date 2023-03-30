@@ -1,4 +1,4 @@
-import BREAKPOINTS from '@/styles/BreakPoints'
+import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
@@ -13,7 +13,7 @@ const HeaderWrapper = styled.header`
   padding: 0 4rem;
   background-color: ${COLOR.white};
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
     height: 8rem;
     padding: 0 2rem;
   }
@@ -36,7 +36,7 @@ const Header = styled.nav`
 const HeaderLogo = styled.nav`
   width: 24.4rem;
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
     width: 10rem;
 
     img {
@@ -57,7 +57,7 @@ const HeaderNav = styled.nav`
     height: 3rem;
   }
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
     align-items: flex-end;
     width: 3rem;
     height: 3rem;
@@ -97,7 +97,7 @@ const HeaderHamburger = styled.button`
   width: 3rem;
   height: 3rem;
 
-  @media (min-width: ${BREAKPOINTS.mobile}px) {
+  @media (min-width: ${BREAKPOINTS.tablet}px) {
     display: none;
   }
 `
