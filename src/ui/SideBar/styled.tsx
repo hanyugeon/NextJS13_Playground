@@ -12,10 +12,10 @@ const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
   backdrop-filter: blur(1rem);
 
   @media (max-width: ${BREAKPOINTS.tablet}px) {
-    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 
     > aside {
-      animation: ease-in-out 0.6s ${(props) => (props.isOpen ? 'showUp' : '')};
+      animation: ease-in-out 0.6s ${({ isOpen }) => (isOpen ? 'showUp' : '')};
     }
 
     @keyframes showUp {

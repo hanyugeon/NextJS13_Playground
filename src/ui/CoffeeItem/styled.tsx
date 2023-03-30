@@ -50,8 +50,8 @@ const CoffeeItemImageWrapper = styled.div`
 const CoffeeItemTitle = styled.div<{ isSoldOut: boolean }>`
   height: 100%;
   font-size: 2.2rem;
-  text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
-  color: ${(props) => (props.isSoldOut ? COLOR.gray : COLOR.black)};
+  text-decoration: ${({ isSoldOut }) => (isSoldOut ? 'line-through' : 'none')};
+  color: ${({ isSoldOut }) => (isSoldOut ? COLOR.gray : COLOR.black)};
 
   @media (max-width: ${BREAKPOINTS.tablet}px) {
     font-size: 1.8rem;
