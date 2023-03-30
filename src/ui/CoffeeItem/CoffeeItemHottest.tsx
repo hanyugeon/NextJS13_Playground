@@ -1,6 +1,5 @@
-import { icHottest } from '@/assets/icons'
 import Image from 'next/image'
-import { StyledCoffeeItemHottest } from './styled'
+import * as S from './styled'
 
 interface CoffeeItemTypes {
   isHottest: boolean
@@ -9,9 +8,9 @@ interface CoffeeItemTypes {
 
 const CoffeeItemHottest = ({ isHottest, coffeeImage }: CoffeeItemTypes) => {
   return (
-    <StyledCoffeeItemHottest isHottest={isHottest}>
+    <S.CoffeeItemHottest isHottest={isHottest}>
       <Image width={60} height={60} src={coffeeImage} alt="" />
-    </StyledCoffeeItemHottest>
+    </S.CoffeeItemHottest>
   )
 }
 

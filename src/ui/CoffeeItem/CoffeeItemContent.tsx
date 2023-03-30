@@ -1,4 +1,4 @@
-import { StyledCoffeeItemContent } from './styled'
+import * as S from './styled'
 
 interface CoffeeItemTypes {
   coffeeTitle: string
@@ -7,9 +7,9 @@ interface CoffeeItemTypes {
 
 const CoffeeItemContent = ({ coffeeTitle, isSoldOut }: CoffeeItemTypes) => {
   return (
-    <StyledCoffeeItemContent isSoldOut={isSoldOut}>
+    <S.CoffeeItemContent isSoldOut={isSoldOut}>
       {coffeeTitle}
-    </StyledCoffeeItemContent>
+    </S.CoffeeItemContent>
   )
 }
 

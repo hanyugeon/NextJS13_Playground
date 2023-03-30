@@ -4,7 +4,7 @@ import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
-const StyledCoffeeItemContainer = styled.article`
+const CoffeeItemContainer = styled.article`
   display: flex;
   width: 100%;
   height: 7.2rem;
@@ -39,7 +39,7 @@ const StyledCoffeeItemContainer = styled.article`
   }
 `
 
-const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
+const CoffeeItemHottest = styled.div<{ isHottest: boolean }>`
   height: 100%;
 
   > img {
@@ -48,7 +48,7 @@ const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
   }
 `
 
-const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
+const CoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
   height: 100%;
   font-size: 2.2rem;
   text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
@@ -57,13 +57,16 @@ const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
   @media (max-width: ${BREAKPOINTS.tablet}px) {
     font-size: 1.8rem;
   }
+  @media (max-width: ${BREAKPOINTS.mobile}px) {
+    font-size: 1.6rem;
+  }
 `
 
-const StyledCoffeeItemCheckBox = styled.div`
+const CoffeeItemCheckBox = styled.div`
   height: 100%;
 `
 
-const StyledCoffeeItemCheckBoxElement = styled.button<{
+const CoffeeItemCheckBoxElement = styled.button<{
   isChecked: boolean
   onClick: () => void
 }>`
@@ -80,9 +83,9 @@ const StyledCoffeeItemCheckBoxElement = styled.button<{
 `
 
 export {
-  StyledCoffeeItemContainer,
-  StyledCoffeeItemHottest,
-  StyledCoffeeItemContent,
-  StyledCoffeeItemCheckBoxElement,
-  StyledCoffeeItemCheckBox,
+  CoffeeItemContainer,
+  CoffeeItemHottest,
+  CoffeeItemContent,
+  CoffeeItemCheckBoxElement,
+  CoffeeItemCheckBox,
 }

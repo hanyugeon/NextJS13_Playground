@@ -1,7 +1,4 @@
-import {
-  StyledCoffeeItemCheckBox,
-  StyledCoffeeItemCheckBoxElement,
-} from './styled'
+import * as S from './styled'
 
 interface CoffeeItemToggleTypes {
   isChecked: boolean
@@ -10,13 +7,13 @@ interface CoffeeItemToggleTypes {
 
 const CoffeeItemCheckBox = ({ isChecked, onClick }: CoffeeItemToggleTypes) => {
   return (
-    <StyledCoffeeItemCheckBox>
-      <StyledCoffeeItemCheckBoxElement
+    <S.CoffeeItemCheckBox>
+      <S.CoffeeItemCheckBoxElement
         aria-label={'MenuOptionCheckBox'}
         isChecked={isChecked}
         onClick={onClick}
       />
-    </StyledCoffeeItemCheckBox>
+    </S.CoffeeItemCheckBox>
   )
 }
 
