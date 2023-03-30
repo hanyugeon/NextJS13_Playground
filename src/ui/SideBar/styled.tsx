@@ -29,7 +29,6 @@ const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
   }
 `
 
-// const SideBar = styled.aside<{ isOpen: boolean }>`
 const SideBar = styled.aside`
   position: absolute;
   width: 32rem;
