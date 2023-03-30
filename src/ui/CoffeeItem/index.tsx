@@ -8,15 +8,16 @@ import CoffeeItemHottest from './CoffeeItemHottest'
 
 interface CoffeeTypes {
   coffeeTitle: string
+  coffeeImage: string
 }
 
-const CoffeeItem = ({ coffeeTitle }: CoffeeTypes) => {
-  const [isHottest, setIsHottest] = useStateToggle()
-  const [isSoldOut, setIsSoldOut] = useStateToggle()
+const CoffeeItem = ({ coffeeTitle, coffeeImage }: CoffeeTypes) => {
+  const [isHottest, setIsHottest] = useStateToggle(true)
+  const [isSoldOut, setIsSoldOut] = useStateToggle(false)
 
   return (
     <CoffeeItemContainer>
-      <CoffeeItemHottest isHottest={isHottest} />
+      <CoffeeItemHottest isHottest={isHottest} coffeeImage={coffeeImage} />
       <CoffeeItemContent coffeeTitle={coffeeTitle} isSoldOut={isSoldOut} />
       <CoffeeItemCheckBox isChecked={isHottest} onClick={setIsHottest} />
       <CoffeeItemCheckBox isChecked={isSoldOut} onClick={setIsSoldOut} />

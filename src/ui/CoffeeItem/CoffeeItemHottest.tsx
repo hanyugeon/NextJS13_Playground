@@ -4,12 +4,13 @@ import { StyledCoffeeItemHottest } from './styled'
 
 interface CoffeeItemTypes {
   isHottest: boolean
+  coffeeImage: string
 }
 
-const CoffeeItemHottest = ({ isHottest }: CoffeeItemTypes) => {
+const CoffeeItemHottest = ({ isHottest, coffeeImage }: CoffeeItemTypes) => {
   return (
     <StyledCoffeeItemHottest isHottest={isHottest}>
-      <Image src={icHottest} alt="" />
+      <Image width={60} height={60} src={coffeeImage} alt="" />
     </StyledCoffeeItemHottest>
   )
 }

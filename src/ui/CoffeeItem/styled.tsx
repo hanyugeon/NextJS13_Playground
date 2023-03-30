@@ -43,8 +43,7 @@ const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
   height: 100%;
 
   > img {
-    width: 3rem;
-    height: 3rem;
+    border-radius: 1.6rem;
     visibility: ${(props) => (props.isHottest ? 'visible' : 'hidden')};
   }
 `
