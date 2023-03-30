@@ -9,6 +9,8 @@ const CoffeeItemContainer = styled.article`
   width: 100%;
   height: 7.2rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   background-color: ${COLOR.white};
 
   :nth-of-type(even) {
@@ -21,15 +23,30 @@ const CoffeeItemContainer = styled.article`
 
   > div {
     display: flex;
-    justify-content: center;
     align-items: center;
   }
 
   div:nth-of-type(1) {
-    width: 24%;
+    width: 3rem;
+    justify-content: center;
   }
   div:nth-of-type(2) {
-    width: 36%;
+    width: 6rem;
+    justify-content: flex-start;
+  }
+  div:nth-of-type(3) {
+    width: calc(64% - 9rem);
+    justify-content: center;
+  }
+`
+
+const CoffeeItemBadgeWrapper = styled.div<{ isBestSeller: boolean }>`
+  width: 2rem;
+
+  > img {
+    margin: 0 auto;
+
+    opacity: ${({ isBestSeller }) => (isBestSeller ? 1 : 0)};
   }
 `
 
@@ -80,6 +97,7 @@ const CoffeeItemCheckBox = styled.button<{
 
 export {
   CoffeeItemContainer,
+  CoffeeItemBadgeWrapper,
   CoffeeItemImageWrapper,
   CoffeeItemTitle,
   CoffeeItemCheckBox,

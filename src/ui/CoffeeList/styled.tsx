@@ -27,13 +27,13 @@ const CoffeeListHeader = styled.header`
   color: ${COLOR.white};
 
   span:nth-of-type(1) {
-    width: 60%;
+    width: 64%;
   }
   span:nth-of-type(2) {
-    width: 20%;
+    width: 18%;
   }
   span:nth-of-type(3) {
-    width: 20%;
+    width: 18%;
   }
 `
 
