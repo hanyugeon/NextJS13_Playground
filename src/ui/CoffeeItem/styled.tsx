@@ -44,7 +44,13 @@ const CoffeeItemHottest = styled.div<{ isHottest: boolean }>`
 
   > img {
     border-radius: 1.6rem;
+    object-fit: cover;
     visibility: ${({ isHottest }) => (isHottest ? 'visible' : 'hidden')};
+
+    @media (max-width: ${BREAKPOINTS.mobile}px) {
+      width: 5.2rem;
+      height: 5.2rem;
+    }
   }
 `
 
