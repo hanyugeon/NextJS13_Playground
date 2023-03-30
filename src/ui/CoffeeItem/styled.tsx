@@ -1,13 +1,13 @@
 'use client'
 
-import BREAKPOINTS from '@/styles/BreakPoints'
+import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/Colors'
 import styled from '@emotion/styled'
 
 const StyledCoffeeItemContainer = styled.article`
   display: flex;
   width: 100%;
-  height: 8rem;
+  height: 7.2rem;
   text-align: center;
   background-color: ${COLOR.white};
 
@@ -26,16 +26,16 @@ const StyledCoffeeItemContainer = styled.article`
   }
 
   div:nth-of-type(1) {
-    width: 16%;
+    width: 24%;
   }
   div:nth-of-type(2) {
-    width: 48%;
+    width: 36%;
   }
   div:nth-of-type(3) {
-    width: 18%;
+    width: 20%;
   }
   div:nth-of-type(4) {
-    width: 18%;
+    width: 20%;
   }
 `
 
@@ -44,7 +44,7 @@ const StyledCoffeeItemHottest = styled.div<{ isHottest: boolean }>`
 
   > img {
     border-radius: 1.6rem;
-    visibility: ${(props) => (props.isHottest ? 'visible' : 'hidden')};
+    visibility: ${({ isHottest }) => (isHottest ? 'visible' : 'hidden')};
   }
 `
 
@@ -54,7 +54,7 @@ const StyledCoffeeItemContent = styled.div<{ isSoldOut: boolean }>`
   text-decoration: ${(props) => (props.isSoldOut ? 'line-through' : 'none')};
   color: ${(props) => (props.isSoldOut ? COLOR.gray : COLOR.black)};
 
-  @media (max-width: ${BREAKPOINTS.mobile}px) {
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
     font-size: 1.8rem;
   }
 `
