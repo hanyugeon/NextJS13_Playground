@@ -10,7 +10,7 @@ type CoffeeDataType = {
   id: number
 }
 
-async function Home() {
+export default async function Home() {
   const coffeeData: CoffeeDataType[] = await getCoffeeData()
 
   return (
@@ -25,5 +25,3 @@ async function Home() {
     </CoffeeList>
   )
 }
-
-export default Home
