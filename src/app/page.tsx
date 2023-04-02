@@ -1,4 +1,3 @@
-import { getCoffeeData } from '@/pages/api/coffee'
 import CoffeeItem from '@/ui/CoffeeItem'
 import CoffeeList from '@/ui/CoffeeList'
 
@@ -8,6 +7,18 @@ type CoffeeDataType = {
   ingredients: string[]
   image: string
   id: number
+}
+
+async function getCoffeeData() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`)
+
+    if (!response.ok) throw new Error('Failed to fetch data')
+
+    return response.json()
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export default async function Home() {
