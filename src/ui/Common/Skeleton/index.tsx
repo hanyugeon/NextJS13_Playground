@@ -1,6 +1,7 @@
 'use client'
 
 import BREAKPOINTS from '@/styles/breakpoints'
+import { COLOR } from '@/styles/Colors'
 import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 
@@ -13,7 +14,7 @@ const skeletonKeyframes = keyframes`
   }
 `
 
-export const SkeletonContainer = styled.section`
+export const SkeletonContainer = styled.div`
   width: 100%;
   height: 100%;
   max-width: 80rem;
@@ -30,10 +31,16 @@ export const Skeleton = styled.div<{ width: string; height: string }>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   border-radius: 0.8rem;
-  margin: 1rem;
+  margin: 0.5rem;
   animation: ${skeletonKeyframes} 2400ms infinite;
-  background-color: #ffbfae;
-  background-image: linear-gradient(270deg, #ffbfae, #ff7c58, #ffbfae);
+  animation-duration: 1s;
+  background-color: ${`${COLOR.brand3}`};
+  background-image: linear-gradient(
+    270deg,
+    ${`${COLOR.brand3}`},
+    ${`${COLOR.brand2}`},
+    ${`${COLOR.brand3}`}
+  );
   background-size: 20rem 100%;
   background-repeat: no-repeat;
 `
