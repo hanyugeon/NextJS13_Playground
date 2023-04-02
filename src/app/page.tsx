@@ -10,13 +10,15 @@ type CoffeeDataType = {
 }
 
 async function getCoffeeData() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`)
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`)
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch data')
+    if (!response.ok) throw new Error('Failed to fetch data')
+
+    return response.json()
+  } catch (error) {
+    console.error(error)
   }
-
-  return response.json()
 }
 
 export default async function Home() {
