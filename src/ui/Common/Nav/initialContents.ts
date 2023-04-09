@@ -8,7 +8,7 @@ const NAV_ROUTE_CONTENTS = [
 
 const NAV_LINK_CONTENTS = [
   {
-    href: 'https:/github.com/hanyugeon',
+    href: 'https://github.com/hanyugeon',
     title: 'github',
     icon: icGithub,
   },
