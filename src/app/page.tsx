@@ -1,13 +1,6 @@
+import type { CoffeeDataType } from '@/types/coffee'
 import CoffeeItem from '@/ui/CoffeeItem'
 import CoffeeList from '@/ui/CoffeeList'
-
-type CoffeeDataType = {
-  title: string
-  description: string
-  ingredients: string[]
-  image: string
-  id: number
-}
 
 async function getCoffeeData() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
