@@ -12,6 +12,7 @@ const NavLinkItem = ({ title, href, icon }: NavLinkItemTypes) => {
     <Link
       href={href}
       aria-label={title}
+      passHref={true}
       target="_blank"
       rel="noopener noreferrer"
     >
