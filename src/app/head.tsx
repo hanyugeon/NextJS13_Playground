@@ -1,4 +1,4 @@
-const Head = () => {
+export default function Head() {
   return (
     <>
       <title>NextJs13 PlayGround</title>
@@ -8,5 +8,3 @@ const Head = () => {
     </>
   )
 }
-
-export default Head
