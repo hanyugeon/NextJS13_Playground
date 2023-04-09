@@ -1,5 +1,3 @@
-const Tech = () => {
+export default function Tech() {
   return <></>
 }
-
-export default Tech

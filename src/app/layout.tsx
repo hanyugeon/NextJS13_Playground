@@ -6,7 +6,7 @@ type ChildrenType = {
   children: React.ReactNode
 }
 
-const RootLayout = ({ children }: ChildrenType) => {
+export default function RootLayout({ children }: ChildrenType) {
   return (
     <html lang="ko-KR" className={`${notoSansKrFont.className}`}>
       <GlobalStyle />
@@ -17,5 +17,3 @@ const RootLayout = ({ children }: ChildrenType) => {
     </html>
   )
 }
-
-export default RootLayout
