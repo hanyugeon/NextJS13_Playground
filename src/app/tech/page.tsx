@@ -21,7 +21,7 @@ async function getStaticTechData() {
 
   const database = await res.json()
   const techData: TechDataType[] = []
-  const getData = () => {
+  const getData = async () => {
     database.results.map((data: any, idx: number) => {
       techData.push({
         id: idx,
@@ -31,7 +31,7 @@ async function getStaticTechData() {
     })
   }
 
-  getData()
+  await getData()
 
   return techData
 }
