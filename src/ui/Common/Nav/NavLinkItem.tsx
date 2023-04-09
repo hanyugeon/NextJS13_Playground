@@ -9,13 +9,7 @@ interface NavLinkItemTypes {
 
 const NavLinkItem = ({ title, href, icon }: NavLinkItemTypes) => {
   return (
-    <Link
-      href={href}
-      aria-label={title}
-      passHref={true}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link href={href} aria-label={title} target="_blank" rel="noreferrer">
       <Image width={30} height={30} src={icon} alt={title} />
     </Link>
   )
