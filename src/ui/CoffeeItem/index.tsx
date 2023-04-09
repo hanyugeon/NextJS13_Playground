@@ -1,6 +1,7 @@
 'use client'
 
 import { icBestseller } from '@/assets/icons'
+import { imgUndefinedImage } from '@/assets/images'
 import { useStateToggle } from '@/hooks'
 import Image from 'next/image'
 import * as S from './styled'
@@ -25,9 +26,16 @@ const CoffeeItem = ({ coffeeTitle, coffeeImage }: CoffeeTypes) => {
         />
       </S.CoffeeItemBadgeWrapper>
       <S.CoffeeItemImageWrapper>
-        <Image width={60} height={60} src={coffeeImage} alt="BeverageImage" />
+        <Image
+          src={coffeeImage ? coffeeImage : imgUndefinedImage}
+          alt="BeverageImage"
+          width={60}
+          height={60}
+        />
       </S.CoffeeItemImageWrapper>
-      <S.CoffeeItemTitle isSoldOut={isSoldOut}>{coffeeTitle}</S.CoffeeItemTitle>
+      <S.CoffeeItemTitle isSoldOut={isSoldOut}>
+        {coffeeTitle ? coffeeTitle : '불러올 수 없음'}
+      </S.CoffeeItemTitle>
       <S.CoffeeItemCheckBox
         aria-label={'MenuOptionCheckBox'}
         isChecked={isBestSeller}
