@@ -1,17 +1,37 @@
-import type { TechDataType } from '@/types/tech'
+import type { NotionDataType, NotionRowType } from '@/types/api'
 import CoffeeItem from '@/ui/CoffeeItem'
 import CoffeeList from '@/ui/CoffeeList'
+import { mappingApiData } from '@/utils/mappingApiData'
+
+const SECRET_KEY = process.env.NOTION_SECRET
+const DATABASE_ID = process.env.NOTION_TECH_DATABASE_ID
 
 async function getStaticTechData() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tech`)
+  const options = {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'Notion-Version': '2022-06-28',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${SECRET_KEY}`,
+    },
+    body: JSON.stringify({ page_size: 100 }),
+  }
 
-  if (!response.ok) throw new Error('Failed to fetch data')
+  const res = await fetch(
+    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+    options,
+  )
 
-  return await response.json()
+  const database = await res.json()
+
+  const data: NotionRowType[] = database.results
+
+  return mappingApiData(data)
 }
 
 export default async function Tech() {
-  const techData: TechDataType[] = await getStaticTechData()
+  const techData: NotionDataType[] = await getStaticTechData()
 
   return (
     <CoffeeList>
