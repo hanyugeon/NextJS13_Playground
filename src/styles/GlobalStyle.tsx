@@ -2,6 +2,7 @@
 
 import { Global, css } from '@emotion/react'
 import emotionReset from 'emotion-reset'
+import { COLOR } from './Colors'
 
 const style = css`
   ${emotionReset}
@@ -14,6 +15,7 @@ const style = css`
   body {
     width: 100%;
     height: 100%;
+    background-color: ${COLOR.background};
   }
 
   #root {

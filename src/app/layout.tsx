@@ -1,19 +1,19 @@
+import TemplateProvider from '@/components/TemplateProvider'
+import { notoSansKrFont } from '@/styles/fonts'
 import GlobalStyle from '@/styles/GlobalStyle'
-import { NextPage } from 'next/types'
-import { notoSansKrFont } from './fonts'
 
-interface Props {
+type ChildrenType = {
   children: React.ReactNode
 }
 
-const RootLayout: NextPage<Props> = (Props) => {
+export default function RootLayout({ children }: ChildrenType) {
   return (
-    <html>
+    <html lang="ko-KR" className={`${notoSansKrFont.className}`}>
       <GlobalStyle />
-      <head className={`${notoSansKrFont.className}`} />
-      <body className={`${notoSansKrFont.className}`}>{Props.children}</body>
+      <head />
+      <body>
+        <TemplateProvider>{children}</TemplateProvider>
+      </body>
     </html>
   )
 }
-
-export default RootLayout
