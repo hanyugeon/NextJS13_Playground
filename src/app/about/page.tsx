@@ -1,28 +1,47 @@
-import type { AboutDataType } from '@/types/about'
+import type { NotionDataType, NotionRowType } from '@/types/api'
 import CoffeeItem from '@/ui/CoffeeItem'
 import CoffeeList from '@/ui/CoffeeList'
+import { mappingApiData } from '@/utils/mappingApiData'
 
-// async function getStaticAboutData() {
-//   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/about`)
+const SECRET_KEY = process.env.NOTION_SECRET
+const DATABASE_ID = process.env.NOTION_ABOUT_DATABASE_ID
 
-//   if (!response.ok) throw new Error('Failed to fetch data')
+async function getStaticAboutData() {
+  const options = {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'Notion-Version': '2022-06-28',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${SECRET_KEY}`,
+    },
+    body: JSON.stringify({ page_size: 100 }),
+  }
 
-//   return await response.json()
-// }
+  const res = await fetch(
+    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+    options,
+  )
 
-export default async function Tech() {
-  // const aboutData: AboutDataType[] = await getStaticAboutData()
+  const database = await res.json()
+
+  const data: NotionRowType[] = database.results
+
+  return mappingApiData(data)
+}
+
+export default async function About() {
+  const aboutData: NotionDataType[] = await getStaticAboutData()
 
   return (
-    <></>
-    // <CoffeeList>
-    //   {aboutData.map((about, idx) => (
-    //     <CoffeeItem
-    //       key={idx}
-    //       coffeeTitle={about.title}
-    //       coffeeImage={about.image}
-    //     />
-    //   ))}
-    // </CoffeeList>
+    <CoffeeList>
+      {aboutData.map((about, idx) => (
+        <CoffeeItem
+          key={idx}
+          coffeeTitle={about.title}
+          coffeeImage={about.image}
+        />
+      ))}
+    </CoffeeList>
   )
 }
