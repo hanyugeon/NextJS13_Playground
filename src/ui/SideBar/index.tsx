@@ -3,7 +3,7 @@ import { NavLinkItem, NavRouteItem } from '@/ui/Common/Nav'
 import { NAV_LINK_CONTENTS, NAV_ROUTE_CONTENTS } from '@/constants'
 import Image from 'next/image'
 import { RefObject } from 'react'
-import * as S from './styled'
+import * as S from './styles'
 
 interface SideBarTypes {
   onClose: () => void
