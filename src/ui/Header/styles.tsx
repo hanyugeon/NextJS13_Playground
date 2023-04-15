@@ -1,5 +1,5 @@
 import BREAKPOINTS from '@/styles/breakpoints'
-import { COLOR } from '@/styles/Colors'
+import { COLOR } from '@/styles/colors'
 import styled from '@emotion/styled'
 
 const HeaderWrapper = styled.header`
