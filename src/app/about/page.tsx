@@ -1,4 +1,4 @@
-import type { NotionDataType, NotionRowType } from '@/types/api'
+import type { NotionDataType, NotionRowType } from '@/types/notionApi'
 import CoffeeItem from '@/ui/CoffeeItem'
 import CoffeeList from '@/ui/CoffeeList'
 import { mappingApiData } from '@/utils/mappingApiData'

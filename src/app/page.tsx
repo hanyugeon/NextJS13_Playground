@@ -1,4 +1,4 @@
-import type { CoffeeDataType } from '@/types/coffee'
+import type { CoffeeDataType } from '@/types/coffeeApi'
 import CoffeeItem from '@/ui/CoffeeItem'
 import CoffeeList from '@/ui/CoffeeList'
 

@@ -1,4 +1,4 @@
-import type { NotionDataType, NotionRowType } from '@/types/api'
+import type { NotionDataType, NotionRowType } from '@/types/notionApi'
 
 export const mappingApiData = (data: NotionRowType[]) => {
   const response: NotionDataType[] = []
