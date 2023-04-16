@@ -1,7 +1,7 @@
 import { icLogo } from '@/assets/icons'
 import Image from 'next/image'
 import Link from 'next/link'
-import * as S from './styled'
+import * as S from './styles'
 
 const HeaderLogo = () => {
   return (

@@ -4,7 +4,7 @@ import { icBestseller } from '@/assets/icons'
 import { imgUndefinedImage } from '@/assets/images'
 import { useStateToggle } from '@/hooks'
 import Image from 'next/image'
-import * as S from './styled'
+import * as S from './styles'
 
 interface CoffeeTypes {
   coffeeTitle: string
