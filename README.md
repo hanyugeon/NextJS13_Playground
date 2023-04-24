@@ -1,8 +1,8 @@
-# NEXT.js 13 플레이그라운드
+# NEXT.js 13 PlayGround 회고록
 
 - Vercel: [배포 링크](https://next-js-13-playground-eight.vercel.app/)
 - Figma: [와이어프레임](https://www.figma.com/file/DYOIDHAtCfq2tnOBoVVCjY/NEXT.js13-PLAYGROUND?node-id=0%3A1&t=DaZRsmfl1on0XBNs-1)
-- 저장소와 [README.md](http://readme.md/): [GitHub](https://github.com/hanyugeon/NextJS13_Playground)
+- 저장소와 리드미: [GitHub](https://github.com/hanyugeon/NextJS13_Playground)
 - 웹 성능 지표: [Mobile(모바일)](https://pagespeed.web.dev/analysis/https-next-js-13-playground-eight-vercel-app/b5pxatv886?form_factor=mobile), [Desktop(데스크탑)](https://pagespeed.web.dev/analysis/https-next-js-13-playground-eight-vercel-app/b5pxatv886?form_factor=desktop)
 - 기술스택: TypeScript, NEXT.js(app Directory), Emotion, [SampleAPIs](https://sampleapis.com/api-list/coffee), NotionAPI, Vercel
 
@@ -16,7 +16,7 @@
 ## 렌더링 방식
 
 - [개요](#개요)
-- [SSR과 SSG 이야기](#ssr과-ssg)
+- [SSR과 SSG 이야기](#ssr과-ssg-이야기)
 - [구현](#구현)
 
 ## 성능개선
