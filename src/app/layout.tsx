@@ -1,4 +1,4 @@
-import TemplateProvider from '@/components/TemplateProvider'
+import { Template, RecoilRoot } from '@/components'
 import { notoSansKrFont } from '@/styles/fonts'
 import GlobalStyle from '@/styles/GlobalStyle'
 
@@ -12,7 +12,9 @@ export default function RootLayout({ children }: ChildrenType) {
       <GlobalStyle />
       <head />
       <body>
-        <TemplateProvider>{children}</TemplateProvider>
+        <RecoilRoot>
+          <Template>{children}</Template>
+        </RecoilRoot>
       </body>
     </html>
   )
