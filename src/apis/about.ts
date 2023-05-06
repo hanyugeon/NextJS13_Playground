@@ -14,7 +14,7 @@ export async function getStaticAboutData() {
       Authorization: `Bearer ${SECRET_KEY}`,
     },
     body: JSON.stringify({ page_size: 100 }),
-    next: { revalidate: 10 },
+    next: { revalidate: 300 },
   }
 
   const res = await fetch(
