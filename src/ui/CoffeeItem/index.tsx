@@ -1,6 +1,6 @@
 'use client'
 
-import { icBestseller } from '@/assets/icons'
+import { IconBestseller } from '@/assets/icons'
 import { imgUndefinedImage } from '@/assets/images'
 import { useStateToggle } from '@/hooks'
 import Image from 'next/image'
@@ -18,12 +18,7 @@ const CoffeeItem = ({ coffeeTitle, coffeeImage }: CoffeeTypes) => {
   return (
     <S.CoffeeItemContainer>
       <S.CoffeeItemBadgeWrapper isBestSeller={isBestSeller}>
-        <Image
-          width={20}
-          height={20}
-          src={icBestseller}
-          alt="BestSellerBadge"
-        />
+        <IconBestseller width="2rem" height="2rem" alt="BestSellerBadge" />
       </S.CoffeeItemBadgeWrapper>
       <S.CoffeeItemImageWrapper>
         <Image

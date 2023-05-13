@@ -1,7 +1,5 @@
-import { icClose } from '@/assets/icons'
-import { NavLinkItem, NavRouteItem } from '@/ui/Common/Nav'
-import { NAV_LINK_CONTENTS, NAV_ROUTE_CONTENTS } from '@/constants'
-import Image from 'next/image'
+import { IconClose, IconGithub } from '@/assets/icons'
+import Link from 'next/link'
 import { RefObject } from 'react'
 import * as S from './styles'
 
@@ -16,31 +14,27 @@ const SideBar = ({ onClose, isSideBarOpen, sideBarRef }: SideBarTypes) => {
     <S.SideBarWrapper isOpen={isSideBarOpen}>
       <S.SideBar ref={sideBarRef}>
         <S.SideBarCloseButton aria-label={'SideBarClose'}>
-          <Image
-            width={22}
-            height={22}
-            onClick={onClose}
-            src={icClose}
-            alt="SideBarClose"
-          />
+          <IconClose width="2.2rem" height="2.2rem" onClick={onClose} />
         </S.SideBarCloseButton>
         <S.SideBarNavContainer>
-          {NAV_ROUTE_CONTENTS.map((content) => (
-            <NavRouteItem
-              key={content.title}
-              href={content.href}
-              title={content.title}
-            />
-          ))}
+          <Link href={'/'} title={'커피 목록'} aria-label={'커피 목록'}>
+            {'커피 목록'}
+          </Link>
+          <Link href={'/tech'} title={'기술 스택'} aria-label={'기술 스택'}>
+            {'기술 스택'}
+          </Link>
+          <Link href={'/about'} title={'만든 계기'} aria-label={'만든 계기'}>
+            {'만든 계기'}
+          </Link>
           <S.SideBarNavLinkContainer>
-            {NAV_LINK_CONTENTS.map((content) => (
-              <NavLinkItem
-                key={content.title}
-                href={content.href}
-                title={content.title}
-                icon={content.icon}
-              />
-            ))}
+            <Link
+              href={'https://github.com/hanyugeon'}
+              aria-label={'github'}
+              target="_blank"
+              rel={'noreferrer'}
+            >
+              <IconGithub width="3rem" height="3rem" />
+            </Link>
           </S.SideBarNavLinkContainer>
         </S.SideBarNavContainer>
       </S.SideBar>
