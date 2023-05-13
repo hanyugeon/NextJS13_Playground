@@ -14,7 +14,7 @@ const HeaderWrapper = styled.header`
   background-color: ${COLOR.white};
 
   @media (max-width: ${BREAKPOINTS.tablet}px) {
-    height: 8rem;
+    height: 9rem;
     padding: 0 2rem;
   }
 `
@@ -39,7 +39,7 @@ const HeaderLogo = styled.nav`
   @media (max-width: ${BREAKPOINTS.tablet}px) {
     width: 10rem;
 
-    img {
+    svg {
       width: 10rem;
     }
   }
@@ -94,8 +94,6 @@ const HeaderHamburger = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
 
   @media (min-width: ${BREAKPOINTS.tablet}px) {
     display: none;

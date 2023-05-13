@@ -43,7 +43,7 @@ const CoffeeItemContainer = styled.article`
 const CoffeeItemBadgeWrapper = styled.div<{ isBestSeller: boolean }>`
   width: 2rem;
 
-  > img {
+  > svg {
     margin: 0 auto;
 
     opacity: ${({ isBestSeller }) => (isBestSeller ? 1 : 0)};
