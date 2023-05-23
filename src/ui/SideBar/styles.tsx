@@ -2,7 +2,7 @@ import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/colors'
 import styled from '@emotion/styled'
 
-const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
+export const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
   position: absolute;
   display: none;
   justify-content: flex-end;
@@ -29,7 +29,7 @@ const SideBarWrapper = styled.aside<{ isOpen: boolean }>`
   }
 `
 
-const SideBar = styled.aside`
+export const SideBarContainer = styled.aside`
   position: absolute;
   width: 32rem;
   height: 100%;
@@ -38,14 +38,14 @@ const SideBar = styled.aside`
   background-color: ${COLOR.white};
 `
 
-const SideBarCloseButton = styled.button`
+export const SideBarCloseButton = styled.button`
   position: absolute;
   margin: 2rem;
   padding: 0;
   right: 0;
 `
 
-const SideBarNavContainer = styled.nav`
+export const SideBarNavContainer = styled.nav`
   display: grid;
   align-content: start;
   justify-content: center;
@@ -62,17 +62,9 @@ const SideBarNavContainer = styled.nav`
   }
 `
 
-const SideBarNavLinkContainer = styled.nav`
+export const SideBarNavLinkContainer = styled.nav`
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
 `
-
-export {
-  SideBarWrapper,
-  SideBar,
-  SideBarCloseButton,
-  SideBarNavContainer,
-  SideBarNavLinkContainer,
-}
