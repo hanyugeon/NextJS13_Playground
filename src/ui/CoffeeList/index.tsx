@@ -1,3 +1,4 @@
+import CoffeeListHeader from './CoffeeListHeader'
 import * as S from './styles'
 
 type ChildrenType = {
@@ -7,11 +8,7 @@ type ChildrenType = {
 const CoffeeList = ({ children }: ChildrenType) => {
   return (
     <S.CoffeeListContainer>
-      <S.CoffeeListHeader>
-        <S.CoffeeListHeaderTable>{'Coffee & Beverage'}</S.CoffeeListHeaderTable>
-        <S.CoffeeListHeaderTable>{'Best Seller'}</S.CoffeeListHeaderTable>
-        <S.CoffeeListHeaderTable>{'Sold Out'}</S.CoffeeListHeaderTable>
-      </S.CoffeeListHeader>
+      <CoffeeListHeader />
       <S.CoffeeListBody>{children}</S.CoffeeListBody>
     </S.CoffeeListContainer>
   )
