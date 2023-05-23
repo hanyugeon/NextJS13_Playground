@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import * as S from './styles'
 
-import { IconLogo } from '@/assets/icons'
+import { IconLogo } from 'public/icons'
 
 const HeaderLogo = () => {
   return (

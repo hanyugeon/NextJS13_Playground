@@ -1,4 +1,4 @@
-import { IconBestseller } from '@/assets/icons'
+import { IconBestseller } from 'public/icons'
 import * as S from './styles'
 
 type CoffeeItemBadgeTypes = {
