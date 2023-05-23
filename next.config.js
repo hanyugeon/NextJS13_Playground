@@ -4,6 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
     domains: ['upload.wikimedia.org', 'commons.wikimedia.org'],
   },
   webpack: (config) => {

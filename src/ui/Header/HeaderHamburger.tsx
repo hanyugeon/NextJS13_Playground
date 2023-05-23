@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import { IconHamburger } from '@/assets/icons'
+import { IconHamburger } from 'public/icons'
 
 type HeaderHamburgerTypes = {
   onOpen: () => void

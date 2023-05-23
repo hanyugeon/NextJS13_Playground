@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import { IconClose } from '@/assets/icons'
+import { IconClose } from 'public/icons'
 
 type SideBarCloseButtonTypes = {
   onClose: () => void

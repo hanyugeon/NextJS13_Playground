@@ -1,4 +1,5 @@
-import { imgUndefinedImage } from '@/assets/images'
+import { imgUndefinedImage } from 'public/images'
+
 import Image from 'next/image'
 import * as S from './styles'
 

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import * as S from './styles'
 
-import { IconGithub } from '@/assets/icons'
+import { IconGithub } from 'public/icons'
 
 const HeaderNavLink = () => {
   return (
