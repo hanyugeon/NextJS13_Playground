@@ -1,9 +1,11 @@
 'use client'
 
-import { IconBestseller } from '@/assets/icons'
-import { imgUndefinedImage } from '@/assets/images'
 import { useStateToggle } from '@/hooks'
-import Image from 'next/image'
+
+import CoffeeItemBadge from './CoffeeItemBadge'
+import CoffeeItemCheckBox from './CoffeeItemCheckBox'
+import CoffeeItemImage from './CoffeeItemImage'
+import CoffeeItemTitle from './CoffeeItemTitle'
 import * as S from './styles'
 
 interface CoffeeTypes {
@@ -17,29 +19,18 @@ const CoffeeItem = ({ coffeeTitle, coffeeImage }: CoffeeTypes) => {
 
   return (
     <S.CoffeeItemContainer>
-      <S.CoffeeItemBadgeWrapper isBestSeller={isBestSeller}>
-        <IconBestseller width="2rem" height="2rem" alt="BestSellerBadge" />
-      </S.CoffeeItemBadgeWrapper>
-      <S.CoffeeItemImageWrapper>
-        <Image
-          src={coffeeImage ? coffeeImage : imgUndefinedImage}
-          alt="BeverageImage"
-          width={60}
-          height={60}
-        />
-      </S.CoffeeItemImageWrapper>
-      <S.CoffeeItemTitle isSoldOut={isSoldOut}>
-        {coffeeTitle ? coffeeTitle : '불러올 수 없음'}
-      </S.CoffeeItemTitle>
-      <S.CoffeeItemCheckBox
-        aria-label={'MenuOptionCheckBox'}
+      <CoffeeItemBadge isBestSeller={isBestSeller} />
+      <CoffeeItemImage coffeeImage={coffeeImage} />
+      <CoffeeItemTitle coffeeTitle={coffeeTitle} isSoldOut={isSoldOut} />
+      <CoffeeItemCheckBox
+        ariaLabel={'MenuOptionCheckBox'}
         isChecked={isBestSeller}
-        onClick={setIsBestSeller}
+        setIsChecked={setIsBestSeller}
       />
-      <S.CoffeeItemCheckBox
-        aria-label={'MenuOptionCheckBox'}
+      <CoffeeItemCheckBox
+        ariaLabel={'MenuOptionCheckBox'}
         isChecked={isSoldOut}
-        onClick={setIsSoldOut}
+        setIsChecked={setIsSoldOut}
       />
     </S.CoffeeItemContainer>
   )
