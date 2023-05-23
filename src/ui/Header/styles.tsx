@@ -2,7 +2,7 @@ import BREAKPOINTS from '@/styles/breakpoints'
 import { COLOR } from '@/styles/colors'
 import styled from '@emotion/styled'
 
-const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ const HeaderWrapper = styled.header`
   }
 `
 
-const Header = styled.nav`
+export const HeaderContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@ const Header = styled.nav`
   }
 `
 
-const HeaderLogo = styled.nav`
+export const HeaderLogo = styled.nav`
   width: 24.4rem;
 
   @media (max-width: ${BREAKPOINTS.tablet}px) {
@@ -45,20 +45,14 @@ const HeaderLogo = styled.nav`
   }
 `
 
-const HeaderNav = styled.nav`
+export const HeaderNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 
-  > nav > img {
-    width: 3rem;
-    height: 3rem;
-  }
-
   @media (max-width: ${BREAKPOINTS.tablet}px) {
-    align-items: flex-end;
     width: 3rem;
     height: 3rem;
 
@@ -68,7 +62,7 @@ const HeaderNav = styled.nav`
   }
 `
 
-const HeaderNavMenu = styled.nav`
+export const HeaderNavMenu = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -82,7 +76,7 @@ const HeaderNavMenu = styled.nav`
   }
 `
 
-const HeaderNavLink = styled.nav`
+export const HeaderNavLink = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -90,7 +84,7 @@ const HeaderNavLink = styled.nav`
   height: 100%;
 `
 
-const HeaderHamburger = styled.button`
+export const HeaderHamburger = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -99,13 +93,3 @@ const HeaderHamburger = styled.button`
     display: none;
   }
 `
-
-export {
-  HeaderWrapper,
-  Header,
-  HeaderLogo,
-  HeaderNav,
-  HeaderNavMenu,
-  HeaderNavLink,
-  HeaderHamburger,
-}
