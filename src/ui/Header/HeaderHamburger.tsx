@@ -1,15 +1,20 @@
+import { useSetRecoilState } from 'recoil'
+import { sideBarAtom } from '@/stores/sideBar'
+
 import * as S from './styles'
 
 import { IconHamburger } from 'public/icons'
 
-type HeaderHamburgerTypes = {
-  onOpen: () => void
-}
+const HeaderHamburger = () => {
+  const setSideBarOpen = useSetRecoilState(sideBarAtom)
 
-const HeaderHamburger = ({ onOpen }: HeaderHamburgerTypes) => {
   return (
     <S.HeaderHamburger aria-label={'SideBarOpen'}>
-      <IconHamburger width="3rem" height="3rem" onClick={onOpen} />
+      <IconHamburger
+        width="3rem"
+        height="3rem"
+        onClick={() => setSideBarOpen(true)}
+      />
     </S.HeaderHamburger>
   )
 }

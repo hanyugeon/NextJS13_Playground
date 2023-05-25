@@ -2,16 +2,12 @@ import HeaderLogo from './HeaderLogo'
 import HeaderNav from './HeaderNav'
 import * as S from './styles'
 
-type HeaderTypes = {
-  onOpen: () => void
-}
-
-const Header = ({ onOpen }: HeaderTypes) => {
+const Header = () => {
   return (
     <S.HeaderWrapper>
       <S.HeaderContainer>
         <HeaderLogo />
-        <HeaderNav onOpen={onOpen} />
+        <HeaderNav />
       </S.HeaderContainer>
     </S.HeaderWrapper>
   )
