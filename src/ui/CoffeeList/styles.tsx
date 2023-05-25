@@ -1,10 +1,10 @@
 'use client'
 
 import BREAKPOINTS from '@/styles/breakpoints'
-import { COLOR } from '@/styles/Colors'
+import { COLOR } from '@/styles/colors'
 import styled from '@emotion/styled'
 
-const CoffeeListContainer = styled.section`
+export const CoffeeListContainer = styled.section`
   width: 100%;
   height: 100%;
   max-width: 80rem;
@@ -17,7 +17,7 @@ const CoffeeListContainer = styled.section`
   }
 `
 
-const CoffeeListHeader = styled.header`
+export const CoffeeListHeader = styled.header`
   display: flex;
   width: 100%;
   height: 8.5rem;
@@ -37,7 +37,7 @@ const CoffeeListHeader = styled.header`
   }
 `
 
-const CoffeeListHeaderTable = styled.span`
+export const CoffeeListHeaderTable = styled.span`
   font-size: 1.8rem;
   font-weight: bold;
 
@@ -49,15 +49,8 @@ const CoffeeListHeaderTable = styled.span`
   }
 `
 
-const CoffeeListBody = styled.article`
+export const CoffeeListBody = styled.article`
   overflow: overlay;
   width: 100%;
   height: calc(100% - 8.5rem);
 `
-
-export {
-  CoffeeListContainer,
-  CoffeeListHeader,
-  CoffeeListHeaderTable,
-  CoffeeListBody,
-}

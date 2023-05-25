@@ -1,13 +1,14 @@
-import { icLogo } from '@/assets/icons'
-import Image from 'next/image'
 import Link from 'next/link'
-import * as S from './styled'
+
+import * as S from './styles'
+
+import { IconLogo } from 'public/icons'
 
 const HeaderLogo = () => {
   return (
     <S.HeaderLogo>
       <Link href="/" aria-label={'MainLogo'}>
-        <Image width={244} height={90} src={icLogo} alt="" priority={true} />
+        <IconLogo width="24.4rem" height="9rem" />
       </Link>
     </S.HeaderLogo>
   )

@@ -1,10 +1,5 @@
-import * as S from './styled'
-
-const TABLE_CONTENTS: string[] = [
-  'Coffee & Beverage',
-  'Best Seller',
-  'Sold Out',
-]
+import CoffeeListHeader from './CoffeeListHeader'
+import * as S from './styles'
 
 type ChildrenType = {
   children: React.ReactNode
@@ -13,13 +8,7 @@ type ChildrenType = {
 const CoffeeList = ({ children }: ChildrenType) => {
   return (
     <S.CoffeeListContainer>
-      <S.CoffeeListHeader>
-        {TABLE_CONTENTS.map((content) => (
-          <S.CoffeeListHeaderTable key={content}>
-            {content}
-          </S.CoffeeListHeaderTable>
-        ))}
-      </S.CoffeeListHeader>
+      <CoffeeListHeader />
       <S.CoffeeListBody>{children}</S.CoffeeListBody>
     </S.CoffeeListContainer>
   )

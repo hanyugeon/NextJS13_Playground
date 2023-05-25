@@ -1,5 +1,5 @@
-import TemplateProvider from '@/components/TemplateProvider'
-import { notoSansKrFont } from '@/styles/fonts'
+import { Template, RecoilRoot } from '@/components'
+import { fontNotoSans } from '@/styles/fonts'
 import GlobalStyle from '@/styles/GlobalStyle'
 
 type ChildrenType = {
@@ -8,11 +8,13 @@ type ChildrenType = {
 
 export default function RootLayout({ children }: ChildrenType) {
   return (
-    <html lang="ko-KR" className={`${notoSansKrFont.className}`}>
+    <html lang="ko-KR" className={`${fontNotoSans.className}`}>
       <GlobalStyle />
       <head />
       <body>
-        <TemplateProvider>{children}</TemplateProvider>
+        <RecoilRoot>
+          <Template>{children}</Template>
+        </RecoilRoot>
       </body>
     </html>
   )

@@ -1,4 +1,4 @@
-import { Skeleton, SkeletonContainer } from '@/ui/Common/Skeleton'
+import { Skeleton, SkeletonContainer } from '@/ui/Skeleton'
 
 export default function Loading() {
   return (
