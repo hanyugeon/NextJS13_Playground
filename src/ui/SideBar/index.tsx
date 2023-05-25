@@ -1,20 +1,23 @@
 import { RefObject } from 'react'
 
+import { useRecoilValue } from 'recoil'
+import { sideBarAtom } from '@/stores/sideBar'
+
 import SideBarCloseButton from './SideBarCloseButton'
 import SideBarNav from './SideBarNav'
 import * as S from './styles'
 
 type SideBarTypes = {
-  onClose: () => void
-  isSideBarOpen: boolean
   sideBarRef: RefObject<HTMLDivElement>
 }
 
-const SideBar = ({ onClose, isSideBarOpen, sideBarRef }: SideBarTypes) => {
+const SideBar = ({ sideBarRef }: SideBarTypes) => {
+  const isSideBarOpen = useRecoilValue(sideBarAtom)
+
   return (
     <S.SideBarWrapper isOpen={isSideBarOpen}>
       <S.SideBarContainer ref={sideBarRef}>
-        <SideBarCloseButton onClose={onClose} />
+        <SideBarCloseButton />
         <SideBarNav />
       </S.SideBarContainer>
     </S.SideBarWrapper>

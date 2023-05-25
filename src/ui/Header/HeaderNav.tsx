@@ -3,16 +3,12 @@ import HeaderNavLink from './HeaderNavLink'
 import HeaderHamburger from './HeaderHamburger'
 import * as S from './styles'
 
-type HeaderNavTypes = {
-  onOpen: () => void
-}
-
-const HeaderNav = ({ onOpen }: HeaderNavTypes) => {
+const HeaderNav = () => {
   return (
     <S.HeaderNav>
       <HeaderNavMenu />
       <HeaderNavLink />
-      <HeaderHamburger onOpen={onOpen} />
+      <HeaderHamburger />
     </S.HeaderNav>
   )
 }

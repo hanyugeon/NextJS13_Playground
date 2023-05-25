@@ -1,40 +1,38 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
+
+import { useSetRecoilState } from 'recoil'
+import { sideBarAtom } from '@/stores/sideBar'
+
+import { useClickAway, useKeyPress } from '@/hooks'
+
 import Header from '@/ui/Header'
 import SideBar from '@/ui/SideBar'
-import { useClickAway, useKeyPress, useModal } from '@/hooks'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect, useRef } from 'react'
 
 const NavigationTemplate = () => {
   const pathname = usePathname()
   const searchParams = useSearchParams()
-  const {
-    isOpen: isSideBarOpen,
-    onOpen: onSideBarOpen,
-    onClose: onSideBarClose,
-  } = useModal(false)
   const escKeyPressed = useKeyPress('Escape')
   const sideBarRef = useRef<HTMLDivElement>(null)
 
+  const setSideBarOpen = useSetRecoilState(sideBarAtom)
+
   useEffect(() => {
-    return onSideBarClose
+    return setSideBarOpen(false)
   }, [pathname, searchParams])
 
   useEffect(() => {
-    if (escKeyPressed) return onSideBarClose
+    if (escKeyPressed) return setSideBarOpen(false)
   }, [escKeyPressed])
 
-  useClickAway(sideBarRef, onSideBarClose)
+  useClickAway(sideBarRef, () => setSideBarOpen(false))
 
   return (
     <>
-      <SideBar
-        sideBarRef={sideBarRef}
-        onClose={onSideBarClose}
-        isSideBarOpen={isSideBarOpen}
-      />
-      <Header onOpen={onSideBarOpen} />
+      <SideBar sideBarRef={sideBarRef} />
+      <Header />
     </>
   )
 }
