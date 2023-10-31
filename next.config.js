@@ -5,7 +5,11 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['upload.wikimedia.org', 'commons.wikimedia.org'],
+    domains: [
+      'upload.wikimedia.org',
+      'commons.wikimedia.org',
+      'images.unsplash.com',
+    ],
   },
   webpack: (config) => {
     config.module.rules.push({
